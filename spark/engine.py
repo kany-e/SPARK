@@ -249,24 +249,47 @@ class KMCEngine:
                     (0, 1, 0), (0, 0, -1), (0, 0, 1)]
 
     def _setup_lateral_interactions(self):
-        """Build lateral interaction lookup (flat 2D array for speed)."""
-        # Flat 2D array: lateral_energy[sp1, sp2] = energy (0 = none)
-        self._lateral_energy = np.zeros((self.nspecies, self.nspecies))
+        """Build lateral interaction lookup (4D array: sp1, st1, sp2, st2).
+
+        site_type IDs come from Site.site_type at project setup; users
+        allocate them as int32. When LateralInteraction.site_type1 or
+        site_type2 is None, the interaction broadcasts over all site
+        types for that species (backward compat with the prior 2D API).
+        """
+        # Determine site-type table size from project setup
+        n_site_types = int(self._site_type_per_s.max()) + 1 \
+            if self.spuck > 0 else 1
+        self._n_site_types = n_site_types
+
+        # 4D array: lateral_energy[sp1, st1, sp2, st2] = energy (0 = none)
+        self._lateral_energy = np.zeros(
+            (self.nspecies, n_site_types,
+             self.nspecies, n_site_types))
+
+        self._lateral_dict = {}
         if hasattr(self.project, 'lateral_interactions'):
             for li in self.project.lateral_interactions:
                 sp1 = self.species_id.get(li.species1)
                 sp2 = self.species_id.get(li.species2)
-                if sp1 is not None and sp2 is not None:
-                    self._lateral_energy[sp1, sp2] = li.energy
-                    self._lateral_energy[sp2, sp1] = li.energy
+                if sp1 is None or sp2 is None:
+                    continue
+                st1 = li.site_type1
+                st2 = li.site_type2
+
+                # Resolve None to "all site types" (backward compat)
+                st1_list = range(n_site_types) if st1 is None else [st1]
+                st2_list = range(n_site_types) if st2 is None else [st2]
+
+                for s1 in st1_list:
+                    for s2 in st2_list:
+                        self._lateral_energy[sp1, s1, sp2, s2] = li.energy
+                        self._lateral_energy[sp2, s2, sp1, s1] = li.energy
+
+                # Stable key per registered interaction (no double-count)
+                key = (li.species1, st1, li.species2, st2)
+                self._lateral_dict[key] = li.energy
+
         self._has_lateral = bool(np.any(self._lateral_energy != 0))
-        # Keep dict for backward compatibility in repr
-        self._lateral_dict = {}
-        if self._has_lateral:
-            for i in range(self.nspecies):
-                for j in range(self.nspecies):
-                    if self._lateral_energy[i, j] != 0:
-                        self._lateral_dict[(i, j)] = self._lateral_energy[i, j]
 
     def _setup_bep_relations(self):
         """Build BEP relation lookup from project definition."""
@@ -639,13 +662,17 @@ class KMCEngine:
 
             entry_site = self._coord_to_site(
                 tuple(c + o for c, o in zip(coord, offset)), s_in_cell)
+            st_entry = self.site_types[entry_site]
 
             for nn in self.neighbors[entry_site]:
                 if n_entries > 1 and nn in proc_sites:
                     continue
                 nn_sp = self.lattice[nn]
-                # Flat array lookup (no dict hash)
-                E_total += self._lateral_energy[sp_id, nn_sp]
+                st_nn = self.site_types[nn]
+                # 4D lookup: (firing species, firing site_type,
+                #             neighbor species, neighbor site_type)
+                E_total += self._lateral_energy[sp_id, st_entry,
+                                                 nn_sp, st_nn]
 
         return E_total
 
@@ -949,7 +976,7 @@ class KMCEngine:
     def __repr__(self):
         lat_str = ''
         if self._has_lateral:
-            lat_str = f', lateral={len(self._lateral_dict)//2}'
+            lat_str = f', lateral={len(self._lateral_dict)}'
         return (f"KMCEngine(model='{self.project.meta.get('model_name')}', "
                 f"size={list(self.lattice_size)}, "
                 f"step={self.kmc_step}, time={self.kmc_time:.6e}"
