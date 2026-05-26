@@ -114,15 +114,29 @@ class LateralInteraction:
         Names of the two interacting species.
     energy : float
         Interaction energy in eV. Positive = repulsive.
+    site_type1, site_type2 : int, optional
+        Site type IDs of the two interacting positions. If both None
+        (default), the interaction applies to all combinations of site
+        types for this species pair (backward-compatible behavior).
+        If specified, the interaction applies only when species1 is at
+        a site of type site_type1 and species2 is at site_type2 (plus
+        the symmetric case via swap).
     """
 
-    def __init__(self, species1, species2, energy):
+    def __init__(self, species1, species2, energy,
+                 site_type1=None, site_type2=None):
         self.species1 = species1
         self.species2 = species2
         self.energy = energy
+        self.site_type1 = site_type1
+        self.site_type2 = site_type2
 
     def __repr__(self):
-        return (f"LateralInteraction({self.species1}-{self.species2}, "
+        if self.site_type1 is None and self.site_type2 is None:
+            return (f"LateralInteraction({self.species1}-{self.species2}, "
+                    f"E={self.energy} eV)")
+        return (f"LateralInteraction({self.species1}@st{self.site_type1}-"
+                f"{self.species2}@st{self.site_type2}, "
                 f"E={self.energy} eV)")
 
 
@@ -353,7 +367,8 @@ class Project:
     # Lateral interactions
     # ------------------------------------------------------------------
 
-    def add_lateral_interaction(self, species1, species2, energy):
+    def add_lateral_interaction(self, species1, species2, energy,
+                                site_type1=None, site_type2=None):
         """
         Add a pairwise lateral interaction between nearest-neighbor adsorbates.
 
@@ -363,8 +378,15 @@ class Project:
             Names of interacting species.
         energy : float
             Interaction energy in eV. Positive = repulsive, negative = attractive.
+        site_type1, site_type2 : int, optional
+            Site type IDs of the two interacting positions. If both None
+            (default), the interaction applies to all site-type combinations
+            for this species pair (backward-compatible). When specified,
+            restricted to that site-type pair (plus the symmetric swap).
         """
-        li = LateralInteraction(species1, species2, energy)
+        li = LateralInteraction(species1, species2, energy,
+                                site_type1=site_type1,
+                                site_type2=site_type2)
         self.lateral_interactions.append(li)
         return li
 
