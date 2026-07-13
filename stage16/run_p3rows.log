@@ -19,3 +19,14 @@ p3rows: 30 runs on 4 workers
   done p3_arm3_T393_s9.npz: kmc 14.22 s, 0 flips, first None
   done p3_arm3_T303_s1.npz: kmc 2.933e+05 s, 1 flips, first 239946.1972730649
   done p3_arm3_T303_s3.npz: kmc 3.042e+05 s, 0 flips, first None
+  done p3_arm3_T393_s8.npz: kmc 14.38 s, 0 flips, first None
+  done p3_arm3_T393_s10.npz: kmc 14.17 s, 0 flips, first None
+  done p3_arm3_T303_s2.npz: kmc 2.875e+05 s, 0 flips, first None
+  done p3_arm3_T303_s4.npz: kmc 2.968e+05 s, 0 flips, first None
+  done p3_arm3_T303_s5.npz: kmc 2.919e+05 s, 0 flips, first None
+  done p3_arm3_T303_s7.npz: kmc 2.991e+05 s, 0 flips, first None
+  done p3_arm3_T303_s9.npz: kmc 2.948e+05 s, 0 flips, first None
+  done p3_arm3_T303_s6.npz: kmc 2.973e+05 s, 0 flips, first None
+  done p3_arm3_T303_s8.npz: kmc 2.833e+05 s, 0 flips, first None
+  done p3_arm3_T303_s10.npz: kmc 2.981e+05 s, 0 flips, first None
+p3rows: complete

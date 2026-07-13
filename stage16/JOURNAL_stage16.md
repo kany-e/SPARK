@@ -114,11 +114,14 @@ attempt.
 Convicts: the four-arm ordering, the laterals-as-discriminator
 finding, the OFF-pair K effect, the arm-3 refutation (with three
 independent geometry/acceleration controls), on THIS strip at these
-caps. Cannot: absolute trigger rates and cross fractions transfer to
-20x20 only up to the strip's small patch fraction (control cross 6%
-vs reference ~31%); 303 K windows are cap-limited (censored bounds);
-the 3-row diagnostic is post-hoc and thinner (labeled as such);
-trigger rate is not a full reduction curve.
+caps. The post-hoc 3-row-patch diagnostic completed at full power:
+arm 1 flips in 8/10 seeds (first flips 1.6-4.5 s) while arm 3 is
+0/10 at 393 K — the interior-patch-cell geometry rescues nothing.
+Cannot: absolute trigger rates and cross fractions transfer to 20x20
+only up to the strip's small patch fraction (control cross 6% vs
+reference ~31%); 303 K windows are cap-limited (censored bounds);
+the 3-row diagnostic remains post-hoc (labeled as such); trigger
+rate is not a full reduction curve.
 
 ## Traceability
 
