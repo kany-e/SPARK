@@ -3,3 +3,20 @@ arm1: 20 runs on 4 workers
   done main_arm1_T303_s7.npz: kmc 1.388e+09 s, 1 flips, first 118.63331104830029
   done main_arm1_T303_s1.npz: kmc 1.396e+09 s, 1 flips, first 321.5521983169021
   done main_arm1_T303_s5.npz: kmc 1.304e+09 s, 0 flips, first None
+  done main_arm1_T303_s4.npz: kmc 1.399e+09 s, 1 flips, first 71.93005849320083
+  done main_arm1_T303_s8.npz: kmc 1.302e+09 s, 0 flips, first None
+  done main_arm1_T303_s2.npz: kmc 1.3e+09 s, 0 flips, first None
+  done main_arm1_T303_s6.npz: kmc 1.301e+09 s, 0 flips, first None
+  done main_arm1_T303_s9.npz: kmc 1.399e+09 s, 1 flips, first 117.2856215419961
+  done main_arm1_T393_s3.npz: kmc 29.33 s, 5 flips, first 0.43532035998501406
+  done main_arm1_T393_s5.npz: kmc 30.58 s, 5 flips, first 0.257824897437957
+  done main_arm1_T393_s1.npz: kmc 33.4 s, 5 flips, first 6.692845526226491
+  done main_arm1_T303_s10.npz: kmc 1.289e+09 s, 3 flips, first 70.56409398105639
+  done main_arm1_T393_s4.npz: kmc 28 s, 6 flips, first 1.3807406579242267
+  done main_arm1_T393_s6.npz: kmc 49.7 s, 6 flips, first 10.586782073140009
+  done main_arm1_T393_s2.npz: kmc 38 s, 3 flips, first 8.918891782766856
+  done main_arm1_T393_s7.npz: kmc 33.56 s, 3 flips, first 5.347892365300008
+  done main_arm1_T393_s9.npz: kmc 35.81 s, 3 flips, first 2.6598924100235273
+  done main_arm1_T393_s8.npz: kmc 31.07 s, 5 flips, first 3.3437382509433218
+  done main_arm1_T393_s10.npz: kmc 32.03 s, 5 flips, first 2.756713954347118
+arm1: complete
