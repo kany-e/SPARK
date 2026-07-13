@@ -1,0 +1,5 @@
+arm1: 20 runs on 4 workers
+  done main_arm1_T303_s3.npz: kmc 1.388e+09 s, 1 flips, first 69.230781160337
+  done main_arm1_T303_s7.npz: kmc 1.388e+09 s, 1 flips, first 118.63331104830029
+  done main_arm1_T303_s1.npz: kmc 1.396e+09 s, 1 flips, first 321.5521983169021
+  done main_arm1_T303_s5.npz: kmc 1.304e+09 s, 0 flips, first None
