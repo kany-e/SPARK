@@ -1,0 +1,5 @@
+p3rows: 30 runs on 4 workers
+  done p3_arm1_T393_s7.npz: kmc 13.4 s, 1 flips, first 4.5129523393454045
+  done p3_arm1_T393_s3.npz: kmc 13.71 s, 2 flips, first 1.5804856924526012
+  done p3_arm1_T393_s1.npz: kmc 15.35 s, 0 flips, first None
+  done p3_arm1_T393_s5.npz: kmc 13.76 s, 1 flips, first 5.877782305762447

@@ -1,0 +1,12 @@
+width: 10 runs on 4 workers
+  done w4_arm3_T393_s4.npz: kmc 43.45 s, 0 flips, first None
+  done w4_arm3_T393_s3.npz: kmc 40.19 s, 0 flips, first None
+  done w4_arm3_T393_s2.npz: kmc 39.94 s, 0 flips, first None
+  done w4_arm3_T393_s1.npz: kmc 40.26 s, 0 flips, first None
+  done w4_arm3_T393_s6.npz: kmc 40.04 s, 0 flips, first None
+  done w4_arm3_T393_s5.npz: kmc 40.16 s, 0 flips, first None
+  done w4_arm3_T393_s7.npz: kmc 40.1 s, 0 flips, first None
+  done w4_arm3_T393_s8.npz: kmc 40.97 s, 0 flips, first None
+  done w4_arm3_T393_s9.npz: kmc 40.05 s, 0 flips, first None
+  done w4_arm3_T393_s10.npz: kmc 40.01 s, 0 flips, first None
+width: complete

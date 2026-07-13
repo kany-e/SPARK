@@ -60,7 +60,8 @@ PATCH_EMPTY = ('pd_hol_E', 'pd_br_11_12_y', 'pd_br_02_12_x',
 
 class StripKMC:
     def __init__(self, Lx, Ly, T, laterals, K_nearpatch,
-                 raise_oxide=0.5, raise_pd=0.3, seed=1):
+                 raise_oxide=0.5, raise_pd=0.3, seed=1,
+                 n_patch_rows=1):
         self.Lx, self.Ly = Lx, Ly
         self.ncells = Lx * Ly
         self.T = T
@@ -118,10 +119,11 @@ class StripKMC:
         for c in range(self.ncells):
             self._set(c, 'ox_hol_0', 'O')
             self._set(c, 'ox_hol_1', 'O')
-        patch_cy = Ly - 1
-        self.patch_cells = [x * Ly + patch_cy for x in range(Lx)]
-        for x in range(Lx):
-            self._flip_manual(x, patch_cy)
+        self.patch_cells = []
+        for cy in range(Ly - n_patch_rows, Ly):
+            self.patch_cells += [x * Ly + cy for x in range(Lx)]
+            for x in range(Lx):
+                self._flip_manual(x, cy)
         self.oxide_cells = [c for c in range(self.ncells)
                             if c not in self.patch_cells]
 

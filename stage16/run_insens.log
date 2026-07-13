@@ -1,0 +1,20 @@
+insens: 18 runs on 4 workers
+  done rx06_arm3_T393_s3.npz: kmc 40.37 s, 0 flips, first None
+  done rx06_arm3_T393_s5.npz: kmc 40.03 s, 0 flips, first None
+  done rx07_arm3_T393_s1.npz: kmc 41.66 s, 0 flips, first None
+  done rx06_arm3_T393_s1.npz: kmc 41.66 s, 0 flips, first None
+  done rx06_arm3_T393_s4.npz: kmc 39.76 s, 0 flips, first None
+  done rx06_arm3_T393_s6.npz: kmc 40.33 s, 0 flips, first None
+  done rx07_arm3_T393_s2.npz: kmc 39.81 s, 0 flips, first None
+  done rx06_arm3_T393_s2.npz: kmc 39.81 s, 0 flips, first None
+  done rx07_arm3_T393_s3.npz: kmc 40.37 s, 0 flips, first None
+  done rx07_arm3_T393_s5.npz: kmc 40.03 s, 0 flips, first None
+  done rp04_arm3_T393_s1.npz: kmc 41.66 s, 0 flips, first None
+  done rp04_arm3_T393_s3.npz: kmc 40.37 s, 0 flips, first None
+  done rx07_arm3_T393_s6.npz: kmc 40.33 s, 0 flips, first None
+  done rx07_arm3_T393_s4.npz: kmc 39.76 s, 0 flips, first None
+  done rp04_arm3_T393_s2.npz: kmc 39.81 s, 0 flips, first None
+  done rp04_arm3_T393_s4.npz: kmc 39.76 s, 0 flips, first None
+  done rp04_arm3_T393_s5.npz: kmc 40.03 s, 0 flips, first None
+  done rp04_arm3_T393_s6.npz: kmc 40.33 s, 0 flips, first None
+insens: complete

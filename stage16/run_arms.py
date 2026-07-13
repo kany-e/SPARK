@@ -28,11 +28,13 @@ CAP_STEPS, CAP_WALL = 300000, 300.0
 
 
 def one(job):
-    arm, T, seed, Lx, Ly, r_ox, r_pd, tagname = job
+    arm, T, seed, Lx, Ly, r_ox, r_pd, tagname = job[:8]
+    n_patch = job[8] if len(job) > 8 else 1
     from strip_kmc import StripKMC
     lat, K = ARMS[arm]
     m = StripKMC(Lx=Lx, Ly=Ly, T=T, laterals=lat, K_nearpatch=K,
-                 raise_oxide=r_ox, raise_pd=r_pd, seed=seed)
+                 raise_oxide=r_ox, raise_pd=r_pd, seed=seed,
+                 n_patch_rows=n_patch)
     r = m.run(max_steps=CAP_STEPS, max_wall=CAP_WALL)
     fn = os.path.join(OUT, f'{tagname}_arm{arm}_T{T:g}_s{seed}.npz')
     np.savez_compressed(
@@ -71,6 +73,14 @@ def main():
     elif mode == 'width':
         jobs = [(3, 393.0, s, 8, 4, 0.5, 0.3, 'w4')
                 for s in SEEDS]
+    elif mode == 'p3rows':
+        # POST-HOC diagnostic (not a registered arm): 3-row patch
+        # (Ly=5) creates interior patch cells, removing the
+        # patch-E O-flooding confound identified in P4.
+        jobs = [(a, T, s, 8, 5, 0.5, 0.3, 'p3', 3)
+                for a in (1, 3) for T in (393.0,) for s in SEEDS]
+        jobs += [(3, 303.0, s, 8, 5, 0.5, 0.3, 'p3', 3)
+                 for s in SEEDS]
     else:
         raise SystemExit(f'unknown mode {mode}')
     print(f'{mode}: {len(jobs)} runs on 4 workers')
