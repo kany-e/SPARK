@@ -131,3 +131,41 @@ analyze.py. Adversarial verification: workflow wf_439f7b5c-e07
 canonical regression: reconkin HEAD fa1f93d clean, vendored XML
 hash-identical to canonical, audit 0 failures / 11 warnings, nothing
 outside stage16/ changed on site-type-laterals).
+
+---
+
+## STAGE-2.0 CORRECTION (2026-07-16, primary source on disk): factor B was malformed; the refutation is re-scoped
+
+The HR2015 paper + SI are now committed at
+`kany-e/reconkin:docs/refs/` and were read first-hand
+(`reconkin:stage20_correction/P0_SOURCE_VERIFICATION.md`). Three
+corrections to this stage's record; the runs, controls, and the
+adversarial verification all stand as measurements.
+
+1. **Factor B tested a value the paper never assigns to the
+   boundary.** p1205, verbatim: "The CO binding is calculated as
+   −1.03 and −1.10 eV at site K (with and without subsurface O
+   underneath the adjacent Pd(100) patch) and as −1.08 eV on the
+   intact √5-oxide." Paper Table 1 (p1205): row K = CO −1.03/−1.10;
+   the single −1.40 in that table is site C (patch bridge). The
+   −1.401 eV used as "K-bridge candidate" in arms 3/4 is SI Table 1's
+   bulk √5 E⁰_CO,br. The B axis of the 2×2 therefore compared the
+   paper value against a bulk value, not two boundary candidates.
+2. **The comparison target was wrong.** The "~80% cross at 393 K"
+   figure appears nowhere in the paper. Figure 10 (p1208, 20×20):
+   oxide/cross/O-diff ≈ 23/61/15 % at 393 K, ≈100/0/1 % at 303 K,
+   crossover ≈379 K.
+3. **The geometry was not the paper's.** p1207: cells of (10×20),
+   (20×20), (40×20) with one [010] row of √5-oxide pre-reduced. The
+   3×8 strip is re-scoped (as Stage 1.8 began to, and Stage 2.0
+   completes): a sub-geometry probe. Additionally, all four arms
+   contained the 8-process patch↔oxide exchange pair, which Stage 1.7
+   called spurious and Stage 2.0 confirms is the paper's own
+   DB-consistent physics (p1205–1206) — so the arms were not
+   contaminated by it; the Stage-1.8 reading ("as-built validity 90%
+   artifact-borne") is itself withdrawn on the reconkin side.
+
+Net: the registered arm-3 failure remains a true negative ON THIS
+STRIP for the strong-form prediction as registered; it convicts
+nothing about the paper's mechanism at the paper's geometry.
+PREDICTIONS.md remains immutable and untouched.
