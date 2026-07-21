@@ -1,2 +1,27 @@
     10000 steps  wall    66.0 s ( 151.5/s)  kmc 3.3038e-03 s
     20000 steps  wall   132.6 s ( 150.8/s)  kmc 3.4688e-03 s
+    30000 steps  wall   198.3 s ( 151.3/s)  kmc 3.6355e-03 s
+    40000 steps  wall   262.7 s ( 152.3/s)  kmc 3.7984e-03 s
+    50000 steps  wall   327.6 s ( 152.6/s)  kmc 3.9633e-03 s
+    60000 steps  wall   391.9 s ( 153.1/s)  kmc 4.1277e-03 s
+    70000 steps  wall   456.9 s ( 153.2/s)  kmc 4.2940e-03 s
+    80000 steps  wall   522.5 s ( 153.1/s)  kmc 4.4597e-03 s
+    90000 steps  wall   588.3 s ( 153.0/s)  kmc 4.6225e-03 s
+   100000 steps  wall   653.8 s ( 152.9/s)  kmc 4.7882e-03 s
+{
+ "engine": "spark-collapsed-OFF",
+ "seed": 1,
+ "steps": 100000,
+ "kmc_time": 0.004788171616785389,
+ "wall_s": 653.8189432621002,
+ "steps_per_s": 152.94754156413669,
+ "oxide_frac": 0.95,
+ "families": {
+  "CO_ads_ox": 1,
+  "CO_diff_ox": 99896,
+  "O_diff_pd": 59,
+  "O_oxide_to_patch": 2,
+  "O_patch_to_oxide": 22,
+  "O_spillover": 20
+ }
+}

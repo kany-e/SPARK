@@ -1,0 +1,17 @@
+{
+ "mode": "ON K=-1.10 raise=0.0",
+ "steps": 14800,
+ "wall_s": 90.94579458236694,
+ "steps_per_s": 162.73429758861553,
+ "kmc_time": 0.6542084141607705,
+ "kmc_per_step": 4.420327122707909e-05,
+ "families": {
+  "CO_ads_ox": 6,
+  "CO_des": 6,
+  "CO_diff_ox": 3200,
+  "O_diff_pd": 10648,
+  "O_oxide_to_patch": 450,
+  "O_patch_to_oxide": 470,
+  "O_spillover": 20
+ }
+}
