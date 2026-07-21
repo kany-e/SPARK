@@ -167,6 +167,7 @@ class KMCEngine:
         # Simulation state
         self.kmc_time = 0.0
         self.kmc_step = 0
+        self.event_hook = None
         self.procstat = np.zeros(self.nproc, dtype=np.int64)
         self._prev_procstat = np.zeros(self.nproc, dtype=np.int64)
         self._prev_time = 0.0
@@ -824,6 +825,12 @@ class KMCEngine:
         # Statistics
         self.kmc_step += 1
         self.procstat[proc_id] += 1
+
+        # Optional observer hook: fn(proc_id, site, kmc_time).
+        # Used by stage21 event-level trigger logging (Fig-10 exact
+        # attribution); None costs one attribute check per step.
+        if self.event_hook is not None:
+            self.event_hook(proc_id, site, self.kmc_time)
 
         return True
 
