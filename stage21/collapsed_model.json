@@ -1,0 +1,5874 @@
+{
+ "provenance": {
+  "xml_sha256": "b456f39b9abb28fb25a3716238e39f0a832a00eaae9d6a6f9be6e785935cc740",
+  "total": 5213,
+  "variants": 5120
+ },
+ "processes": [
+  {
+   "name": "CO_ads_ox_ox_br_0",
+   "rate": "p_COgas*bar*A_CO_ads_ox/sqrt(2*pi*28*umass/beta)",
+   "tof": "{'CO_ads_ox': 1}",
+   "conds": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_ads_ox_ox_br_1",
+   "rate": "p_COgas*bar*A_CO_ads_ox/sqrt(2*pi*28*umass/beta)",
+   "tof": "{'CO_ads_ox': 1}",
+   "conds": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_ads_ox_ox_hol_0",
+   "rate": "p_COgas*bar*A_CO_ads_ox/sqrt(2*pi*28*umass/beta)",
+   "tof": "{'CO_ads_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_ads_ox_ox_hol_1",
+   "rate": "p_COgas*bar*A_CO_ads_ox/sqrt(2*pi*28*umass/beta)",
+   "tof": "{'CO_ads_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_ads_pd_br_01_02_y",
+   "rate": "p_COgas*bar*A_CO_ads_pd/sqrt(2*pi*28*umass/beta)",
+   "tof": "{'CO_ads': 1}",
+   "conds": [
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_ads_pd_br_01_11_x",
+   "rate": "p_COgas*bar*A_CO_ads_pd/sqrt(2*pi*28*umass/beta)",
+   "tof": "{'CO_ads': 1}",
+   "conds": [
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_ads_pd_br_02_12_x",
+   "rate": "p_COgas*bar*A_CO_ads_pd/sqrt(2*pi*28*umass/beta)",
+   "tof": "{'CO_ads': 1}",
+   "conds": [
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_ads_pd_br_11_12_y",
+   "rate": "p_COgas*bar*A_CO_ads_pd/sqrt(2*pi*28*umass/beta)",
+   "tof": "{'CO_ads': 1}",
+   "conds": [
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_ads_pd_br_11_21_x",
+   "rate": "p_COgas*bar*A_CO_ads_pd/sqrt(2*pi*28*umass/beta)",
+   "tof": "{'CO_ads': 1}",
+   "conds": [
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_des_ox_ox_br_0",
+   "rate": "1/(beta*h)*exp(beta*E0_CO_ox_br*eV)",
+   "tof": "{'CO_des_ox': 1}",
+   "conds": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "runtime": {
+    "kind": "des",
+    "sp": "CO",
+    "src": [
+     "ox_br_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": null,
+    "E_tab": null
+   }
+  },
+  {
+   "name": "CO_des_ox_ox_br_1",
+   "rate": "1/(beta*h)*exp(beta*E0_CO_ox_br*eV)",
+   "tof": "{'CO_des_ox': 1}",
+   "conds": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "runtime": {
+    "kind": "des",
+    "sp": "CO",
+    "src": [
+     "ox_br_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": null,
+    "E_tab": null
+   }
+  },
+  {
+   "name": "CO_des_ox_ox_hol_0",
+   "rate": "1/(beta*h)*exp(beta*E0_CO_ox_hol*eV)",
+   "tof": "{'CO_des_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "runtime": {
+    "kind": "des",
+    "sp": "CO",
+    "src": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": null,
+    "E_tab": null
+   }
+  },
+  {
+   "name": "CO_des_ox_ox_hol_1",
+   "rate": "1/(beta*h)*exp(beta*E0_CO_ox_hol*eV)",
+   "tof": "{'CO_des_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "runtime": {
+    "kind": "des",
+    "sp": "CO",
+    "src": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": null,
+    "E_tab": null
+   }
+  },
+  {
+   "name": "CO_des_pd_br_01_02_y",
+   "rate": "1/(beta*h)*exp(beta*E0_CO_pd_C*eV)",
+   "tof": "{'CO_des': 1}",
+   "conds": [
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "CO_des_pd_br_01_11_x",
+   "rate": "1/(beta*h)*exp(beta*E0_CO_pd_D*eV)",
+   "tof": "{'CO_des': 1}",
+   "conds": [
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "CO_des_pd_br_02_12_x",
+   "rate": "1/(beta*h)*exp(beta*E0_CO_pd_B*eV)",
+   "tof": "{'CO_des': 1}",
+   "conds": [
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "CO_des_pd_br_11_12_y",
+   "rate": "1/(beta*h)*exp(beta*E0_CO_pd_A*eV)",
+   "tof": "{'CO_des': 1}",
+   "conds": [
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "CO_des_pd_br_11_21_x",
+   "rate": "1/(beta*h)*exp(beta*E0_CO_pd_H*eV)",
+   "tof": "{'CO_des': 1}",
+   "conds": [
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "CO_diff_ox_brbr_ox_br_0_0_0_to_ox_br_1_0_1",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_ox_brbr)*eV))",
+   "tof": "{'CO_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      1
+     ],
+     "CO"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "CO",
+    "src": [
+     "ox_br_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_br_1",
+     [
+      0,
+      1
+     ]
+    ],
+    "E_tab": 0.4
+   }
+  },
+  {
+   "name": "CO_diff_ox_brbr_ox_br_1_0_1_to_ox_br_0_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_ox_brbr)*eV))",
+   "tof": "{'CO_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_br_1",
+     [
+      0,
+      1
+     ],
+     "CO"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "CO",
+    "src": [
+     "ox_br_1",
+     [
+      0,
+      1
+     ]
+    ],
+    "dst": [
+     "ox_br_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.4
+   }
+  },
+  {
+   "name": "CO_diff_ox_holhol_ox_hol_0_0_0_to_ox_hol_1_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_ox_holhol)*eV))",
+   "tof": "{'CO_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "CO",
+    "src": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.6
+   }
+  },
+  {
+   "name": "CO_diff_ox_holhol_ox_hol_1_0_0_to_ox_hol_0_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_ox_holhol)*eV))",
+   "tof": "{'CO_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "CO",
+    "src": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.6
+   }
+  },
+  {
+   "name": "CO_diff_pd_br_01_02_y_to_pd_br_01_11_x_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_pd_brbr+E_diff_raise)*eV))",
+   "tof": "{'CO_diff': 1}",
+   "conds": [
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_diff_pd_br_01_02_y_to_pd_br_02_12_x_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_pd_brbr+E_diff_raise)*eV))",
+   "tof": "{'CO_diff': 1}",
+   "conds": [
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_diff_pd_br_01_11_x_to_pd_br_01_02_y_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_pd_brbr+E_diff_raise+(E0_CO_pd_C-E0_CO_pd_D))*eV))",
+   "tof": "{'CO_diff': 1}",
+   "conds": [
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_diff_pd_br_01_11_x_to_pd_br_11_12_y_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_pd_brbr+E_diff_raise+(E0_CO_pd_A-E0_CO_pd_D))*eV))",
+   "tof": "{'CO_diff': 1}",
+   "conds": [
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_diff_pd_br_02_12_x_to_pd_br_01_02_y_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_pd_brbr+E_diff_raise+(E0_CO_pd_C-E0_CO_pd_B))*eV))",
+   "tof": "{'CO_diff': 1}",
+   "conds": [
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_diff_pd_br_02_12_x_to_pd_br_11_12_y_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_pd_brbr+E_diff_raise)*eV))",
+   "tof": "{'CO_diff': 1}",
+   "conds": [
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_diff_pd_br_11_12_y_to_pd_br_01_11_x_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_pd_brbr+E_diff_raise)*eV))",
+   "tof": "{'CO_diff': 1}",
+   "conds": [
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_diff_pd_br_11_12_y_to_pd_br_02_12_x_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_pd_brbr+E_diff_raise+(E0_CO_pd_B-E0_CO_pd_A))*eV))",
+   "tof": "{'CO_diff': 1}",
+   "conds": [
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_diff_pd_br_11_12_y_to_pd_br_11_21_x_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_pd_brbr+E_diff_raise+(E0_CO_pd_H-E0_CO_pd_A))*eV))",
+   "tof": "{'CO_diff': 1}",
+   "conds": [
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_diff_pd_br_11_21_x_to_pd_br_11_12_y_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_pd_brbr+E_diff_raise)*eV))",
+   "tof": "{'CO_diff': 1}",
+   "conds": [
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_diff_pd_xc_pd_br_02_12_x_0_m1_to_pd_br_11_21_x",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_pd_brbr+E_diff_raise+(E0_CO_pd_H-E0_CO_pd_B))*eV))",
+   "tof": "{'CO_diff': 1}",
+   "conds": [
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      -1
+     ],
+     "CO"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "CO_diff_pd_xc_pd_br_11_21_x_to_pd_br_02_12_x_0_m1",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_CO_pd_brbr+E_diff_raise)*eV))",
+   "tof": "{'CO_diff': 1}",
+   "conds": [
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      -1
+     ],
+     "CO"
+    ]
+   ]
+  },
+  {
+   "name": "LH_ox_Obr_CObr_ox_br_0_0_0_with_ox_br_1_0_1",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_O_br_CO_br*eV))",
+   "tof": "{'LH_ox': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      1
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_ox_Obr_CObr_ox_br_1_0_1_with_ox_br_0_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_O_br_CO_br*eV))",
+   "tof": "{'LH_ox': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "ox_br_1",
+     [
+      0,
+      1
+     ],
+     "O"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_ox_Obr_COhol_ox_br_0_0_0_with_ox_hol_0_0_m1",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_O_br_CO_hol*eV))",
+   "tof": "{'LH_ox': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_ox_Obr_COhol_ox_br_0_0_0_with_ox_hol_1_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_O_br_CO_hol*eV))",
+   "tof": "{'LH_ox': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_ox_Obr_COhol_ox_br_1_0_0_with_ox_hol_0_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_O_br_CO_hol*eV))",
+   "tof": "{'LH_ox': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_ox_Obr_COhol_ox_br_1_0_0_with_ox_hol_1_0_1",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_O_br_CO_hol*eV))",
+   "tof": "{'LH_ox': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_ox_Ohol_CObr_ox_hol_0_0_0_with_ox_br_1_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_O_hol_CO_br*eV))",
+   "tof": "{'LH_ox': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_ox_Ohol_CObr_ox_hol_0_0_m1_with_ox_br_0_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_O_hol_CO_br*eV))",
+   "tof": "{'LH_ox': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "O"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_ox_Ohol_CObr_ox_hol_1_0_0_with_ox_br_0_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_O_hol_CO_br*eV))",
+   "tof": "{'LH_ox': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_ox_Ohol_CObr_ox_hol_1_0_1_with_ox_br_1_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_O_hol_CO_br*eV))",
+   "tof": "{'LH_ox': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "O"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_ox_Ohol_COhol_ox_hol_0_0_0_with_ox_hol_1_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_O_hol_CO_hol*eV))",
+   "tof": "{'LH_ox': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_ox_Ohol_COhol_ox_hol_1_0_0_with_ox_hol_0_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_O_hol_CO_hol*eV))",
+   "tof": "{'LH_ox': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_pd_br_01_02_y_with_pd_hol_E_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_pd_O_hol_CO_br*eV))",
+   "tof": "{'LH': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_pd_br_01_02_y_with_pd_hol_E_left_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_pd_O_hol_CO_br*eV))",
+   "tof": "{'LH': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_pd_br_01_11_x_with_pd_hol_E_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_pd_O_hol_CO_br*eV))",
+   "tof": "{'LH': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_pd_br_02_12_x_with_pd_hol_E_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_pd_O_hol_CO_br*eV))",
+   "tof": "{'LH': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "LH_pd_br_11_12_y_with_pd_hol_E_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_LH_pd_O_hol_CO_br*eV))",
+   "tof": "{'LH': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "O2_ads_hol_hol",
+   "rate": "p_O2gas*bar*A_O2_ads_ox/sqrt(2*pi*32*umass/beta)*exp(-(beta*E_diss_O2_ox_holhol*eV))",
+   "tof": "{'O2_ads': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O2_ads_pd_pd_hol_E_0_0_to_pd_hol_E_left_1_0",
+   "rate": "p_O2gas*bar*A_O2_ads_pd/sqrt(2*pi*32*umass/beta)",
+   "tof": "{'O2_ads_pd': 1}",
+   "conds": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      1,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      1,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      1,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      1,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O2_des_pd_pd_hol_E_0_0_to_pd_hol_E_left_1_0",
+   "rate": "p_O2gas*bar*A_O2_ads_pd/sqrt(2*pi*32*umass/beta)*exp(beta*2*E0_O_pd_hol*eV)",
+   "tof": "{'O2_des_pd': 1}",
+   "conds": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      1,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      1,
+      0
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "O_diff_ox_brbr_ox_br_0_0_0_to_ox_br_1_0_1",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_ox_brbr)*eV))",
+   "tof": "{'O_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      1
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_br_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_br_1",
+     [
+      0,
+      1
+     ]
+    ],
+    "E_tab": 1.2
+   }
+  },
+  {
+   "name": "O_diff_ox_brbr_ox_br_1_0_1_to_ox_br_0_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_ox_brbr)*eV))",
+   "tof": "{'O_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_br_1",
+     [
+      0,
+      1
+     ],
+     "O"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_br_1",
+     [
+      0,
+      1
+     ]
+    ],
+    "dst": [
+     "ox_br_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 1.2
+   }
+  },
+  {
+   "name": "O_diff_ox_brhol_ox_br_0_0_0_to_ox_hol_0_0_m1",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_ox_brhol)*eV))",
+   "tof": "{'O_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_br_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ]
+    ],
+    "E_tab": 0.1
+   }
+  },
+  {
+   "name": "O_diff_ox_brhol_ox_br_0_0_0_to_ox_hol_1_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_ox_brhol)*eV))",
+   "tof": "{'O_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_br_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.1
+   }
+  },
+  {
+   "name": "O_diff_ox_brhol_ox_br_1_0_0_to_ox_hol_0_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_ox_brhol)*eV))",
+   "tof": "{'O_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_br_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.1
+   }
+  },
+  {
+   "name": "O_diff_ox_brhol_ox_br_1_0_0_to_ox_hol_1_0_1",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_ox_brhol)*eV))",
+   "tof": "{'O_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_br_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ]
+    ],
+    "E_tab": 0.1
+   }
+  },
+  {
+   "name": "O_diff_ox_brhol_ox_hol_0_0_0_to_ox_br_1_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_ox_brhol+(E0_O_ox_br)-(E0_O_ox_hol))*eV))",
+   "tof": "{'O_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_br_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.1
+   }
+  },
+  {
+   "name": "O_diff_ox_brhol_ox_hol_0_0_m1_to_ox_br_0_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_ox_brhol+(E0_O_ox_br)-(E0_O_ox_hol))*eV))",
+   "tof": "{'O_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "O"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ]
+    ],
+    "dst": [
+     "ox_br_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.1
+   }
+  },
+  {
+   "name": "O_diff_ox_brhol_ox_hol_1_0_0_to_ox_br_0_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_ox_brhol+(E0_O_ox_br)-(E0_O_ox_hol))*eV))",
+   "tof": "{'O_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_br_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.1
+   }
+  },
+  {
+   "name": "O_diff_ox_brhol_ox_hol_1_0_1_to_ox_br_1_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_ox_brhol+(E0_O_ox_br)-(E0_O_ox_hol))*eV))",
+   "tof": "{'O_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "O"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ]
+    ],
+    "dst": [
+     "ox_br_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.1
+   }
+  },
+  {
+   "name": "O_diff_ox_holhol_nearpatch_east_ox_hol_0_to_ox_hol_1",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_diff_near_patch*eV))",
+   "tof": "{'O_diff_ox_nearpatch': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      1,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 1.1
+   }
+  },
+  {
+   "name": "O_diff_ox_holhol_nearpatch_east_ox_hol_1_to_ox_hol_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_diff_near_patch*eV))",
+   "tof": "{'O_diff_ox_nearpatch': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      1,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 1.1
+   }
+  },
+  {
+   "name": "O_diff_ox_holhol_nearpatch_north_ox_hol_0_to_ox_hol_1",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_diff_near_patch*eV))",
+   "tof": "{'O_diff_ox_nearpatch': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 1.1
+   }
+  },
+  {
+   "name": "O_diff_ox_holhol_nearpatch_north_ox_hol_1_to_ox_hol_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_diff_near_patch*eV))",
+   "tof": "{'O_diff_ox_nearpatch': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 1.1
+   }
+  },
+  {
+   "name": "O_diff_ox_holhol_nearpatch_south_ox_hol_0_to_ox_hol_1",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_diff_near_patch*eV))",
+   "tof": "{'O_diff_ox_nearpatch': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 1.1
+   }
+  },
+  {
+   "name": "O_diff_ox_holhol_nearpatch_south_ox_hol_1_to_ox_hol_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_diff_near_patch*eV))",
+   "tof": "{'O_diff_ox_nearpatch': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 1.1
+   }
+  },
+  {
+   "name": "O_diff_ox_holhol_nearpatch_west_ox_hol_0_to_ox_hol_1",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_diff_near_patch*eV))",
+   "tof": "{'O_diff_ox_nearpatch': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      -1,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 1.1
+   }
+  },
+  {
+   "name": "O_diff_ox_holhol_nearpatch_west_ox_hol_1_to_ox_hol_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_diff_near_patch*eV))",
+   "tof": "{'O_diff_ox_nearpatch': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      -1,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 1.1
+   }
+  },
+  {
+   "name": "O_diff_ox_ox_hol_0_to_ox_hol_1",
+   "rate": "1/(beta*h)*exp(-(beta*E_diff_O_ox_holhol*eV))",
+   "tof": "{'O_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 1.4
+   }
+  },
+  {
+   "name": "O_diff_ox_ox_hol_1_to_ox_hol_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_diff_O_ox_holhol*eV))",
+   "tof": "{'O_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "O",
+    "src": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 1.4
+   }
+  },
+  {
+   "name": "O_diff_pd_hol_E_left_to_pd_hol_E_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_pd_holhol+E_diff_raise)*eV))",
+   "tof": "{'O_diff': 1}",
+   "conds": [
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O_diff_pd_hol_E_to_pd_hol_E_left_0_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_pd_holhol+E_diff_raise)*eV))",
+   "tof": "{'O_diff': 1}",
+   "conds": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O_diff_pd_xc_pd_hol_E_left_1_0_to_pd_hol_E",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_pd_holhol+E_diff_raise)*eV))",
+   "tof": "{'O_diff': 1}",
+   "conds": [
+    [
+     "pd_hol_E_left",
+     [
+      1,
+      0
+     ],
+     "O"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_hol_E_left",
+     [
+      1,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O_diff_pd_xc_pd_hol_E_to_pd_hol_E_left_1_0",
+   "rate": "1/(beta*h)*exp(-(beta*(E_diff_O_pd_holhol+E_diff_raise)*eV))",
+   "tof": "{'O_diff': 1}",
+   "conds": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      1,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      1,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O_oxide_to_patch_east_ox_hol_0_to_E",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_oxide_br_to_patch*eV))",
+   "tof": "{'O_oxide_to_patch': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      1,
+      0
+     ],
+     "O"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      1,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O_oxide_to_patch_north_ox_hol_1_to_E",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_oxide_br_to_patch*eV))",
+   "tof": "{'O_oxide_to_patch': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "O"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O_oxide_to_patch_south_ox_hol_0_to_E",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_oxide_br_to_patch*eV))",
+   "tof": "{'O_oxide_to_patch': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "O"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O_oxide_to_patch_west_ox_hol_1_to_E",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_oxide_br_to_patch*eV))",
+   "tof": "{'O_oxide_to_patch': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      -1,
+      0
+     ],
+     "O"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      -1,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O_patch_to_oxide_east_E_to_ox_hol_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_patch_to_oxide_br*eV))",
+   "tof": "{'O_patch_to_oxide': 1}",
+   "conds": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_0",
+     [
+      1,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      1,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O_patch_to_oxide_north_E_to_ox_hol_1",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_patch_to_oxide_br*eV))",
+   "tof": "{'O_patch_to_oxide': 1}",
+   "conds": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O_patch_to_oxide_south_E_to_ox_hol_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_patch_to_oxide_br*eV))",
+   "tof": "{'O_patch_to_oxide': 1}",
+   "conds": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O_patch_to_oxide_west_E_to_ox_hol_1",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_patch_to_oxide_br*eV))",
+   "tof": "{'O_patch_to_oxide': 1}",
+   "conds": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_1",
+     [
+      -1,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      -1,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O_spillover_fwd_ox_hol_0_to_pd_hol_E",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_spillover_to_pd*eV))",
+   "tof": "{'O_spillover': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "Osub"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "O_spillover_rev_pd_hol_E_to_ox_hol_0",
+   "rate": "1/(beta*h)*exp(-(beta*E_O_rev_spillover*eV))",
+   "tof": "{'O_spillover_rev': 1}",
+   "conds": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "O"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "Osub"
+    ]
+   ]
+  },
+  {
+   "name": "PHASE_FLIP_oxide_to_metal_Fempty_Hempty",
+   "rate": "1/(beta*h)*exp(-(beta*E_phaseflip*eV))",
+   "tof": "{'PHASE_FLIP': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      -1,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "Osub"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      -1,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "PHASE_FLIP_oxide_to_metal_Fempty_Hnull",
+   "rate": "1/(beta*h)*exp(-(beta*E_phaseflip*eV))",
+   "tof": "{'PHASE_FLIP': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      -1,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      1
+     ],
+     "null"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "Osub"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      -1,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "PHASE_FLIP_oxide_to_metal_Fnull_Hempty",
+   "rate": "1/(beta*h)*exp(-(beta*E_phaseflip*eV))",
+   "tof": "{'PHASE_FLIP': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      -1,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "Osub"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      -1,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "PHASE_FLIP_oxide_to_metal_Fnull_Hnull",
+   "rate": "1/(beta*h)*exp(-(beta*E_phaseflip*eV))",
+   "tof": "{'PHASE_FLIP': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      -1,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      1
+     ],
+     "null"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "Osub"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "null"
+    ],
+    [
+     "pd_hol_E",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_12_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_02_y",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_02_12_x",
+     [
+      -1,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "pd_br_11_21_x",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "pd_hol_E_left",
+     [
+      0,
+      0
+     ],
+     "O"
+    ]
+   ]
+  },
+  {
+   "name": "cross_react_E_pd_D_with_ox_K",
+   "rate": "1/(beta*h)*exp(-(beta*E_cross_react_E*eV))",
+   "tof": "{'cross_react_E': 1, 'CO2_prod': 1}",
+   "conds": [
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "O"
+    ]
+   ],
+   "acts": [
+    [
+     "pd_br_01_11_x",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ]
+   ]
+  },
+  {
+   "name": "CO_diff_ox_brhol_ox_br_0_0_0_to_ox_hol_0_0_m1",
+   "rate": null,
+   "tof": "{'CO_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "CO"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "CO",
+    "src": [
+     "ox_br_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ]
+    ],
+    "E_tab": 0.3
+   }
+  },
+  {
+   "name": "CO_diff_ox_brhol_ox_br_0_0_0_to_ox_hol_1_0_0",
+   "rate": null,
+   "tof": "{'CO_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "CO",
+    "src": [
+     "ox_br_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.3
+   }
+  },
+  {
+   "name": "CO_diff_ox_brhol_ox_br_1_0_0_to_ox_hol_0_0_0",
+   "rate": null,
+   "tof": "{'CO_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "CO",
+    "src": [
+     "ox_br_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.3
+   }
+  },
+  {
+   "name": "CO_diff_ox_brhol_ox_br_1_0_0_to_ox_hol_1_0_1",
+   "rate": null,
+   "tof": "{'CO_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "CO"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "CO",
+    "src": [
+     "ox_br_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ]
+    ],
+    "E_tab": 0.3
+   }
+  },
+  {
+   "name": "CO_diff_ox_brhol_ox_hol_0_0_0_to_ox_br_1_0_0",
+   "rate": null,
+   "tof": "{'CO_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "CO",
+    "src": [
+     "ox_hol_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_br_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.3
+   }
+  },
+  {
+   "name": "CO_diff_ox_brhol_ox_hol_0_0_m1_to_ox_br_0_0_0",
+   "rate": null,
+   "tof": "{'CO_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "CO"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "CO",
+    "src": [
+     "ox_hol_0",
+     [
+      0,
+      -1
+     ]
+    ],
+    "dst": [
+     "ox_br_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.3
+   }
+  },
+  {
+   "name": "CO_diff_ox_brhol_ox_hol_1_0_0_to_ox_br_0_0_0",
+   "rate": null,
+   "tof": "{'CO_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_0",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "CO",
+    "src": [
+     "ox_hol_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "dst": [
+     "ox_br_0",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.3
+   }
+  },
+  {
+   "name": "CO_diff_ox_brhol_ox_hol_1_0_1_to_ox_br_1_0_0",
+   "rate": null,
+   "tof": "{'CO_diff_ox': 1}",
+   "conds": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "CO"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "empty"
+    ]
+   ],
+   "acts": [
+    [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ],
+     "empty"
+    ],
+    [
+     "ox_br_1",
+     [
+      0,
+      0
+     ],
+     "CO"
+    ]
+   ],
+   "runtime": {
+    "kind": "diff",
+    "sp": "CO",
+    "src": [
+     "ox_hol_1",
+     [
+      0,
+      1
+     ]
+    ],
+    "dst": [
+     "ox_br_1",
+     [
+      0,
+      0
+     ]
+    ],
+    "E_tab": 0.3
+   }
+  }
+ ]
+}
