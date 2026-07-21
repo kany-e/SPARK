@@ -344,6 +344,18 @@ class KMCEngine:
             if name in self._bep_by_name:
                 self._bep_proc_ids[pid] = self._bep_by_name[name]
 
+        # Anchor site of each process: the s_in_cell of its first condition
+        # (0 when there are no conditions). A process registers at exactly
+        # one anchor site per satisfiable cell; without this constraint it
+        # would register at all ``spuck`` sites of the cell, inflating the
+        # total rate — and compressing kmc_time — by exactly ``spuck``.
+        # For spuck=1 every anchor is 0 and behavior is unchanged.
+        self._proc_anchor = [conds[0][1] if conds else 0
+                             for conds in self._proc_conditions]
+        self._procs_by_anchor = [[] for _ in range(self.spuck)]
+        for pid, a in enumerate(self._proc_anchor):
+            self._procs_by_anchor[a].append(pid)
+
         # Available sites bookkeeping: O(1) add/remove via swap-with-last
         self._avail_sites = [[] for _ in range(self.nproc)]
         self._site_in_avail = [dict() for _ in range(self.nproc)]
@@ -443,7 +455,11 @@ class KMCEngine:
     # ----------------------------------------------------------------
 
     def _check_process_at_site(self, proc_id, site):
-        """Check if process can occur at site (species + site type)."""
+        """Check if process can occur at site (anchor + species + site type)."""
+        # The process is anchored at a single s_in_cell per cell
+        if self._proc_anchor[proc_id] != site % self.spuck:
+            return False
+
         # Check site type requirement
         site_type_req = self._proc_site_types[proc_id]
         if site_type_req is not None:
@@ -495,8 +511,11 @@ class KMCEngine:
             self._avail_sites[p] = []
             self._site_in_avail[p] = {}
             self._avail_rates[p] = []
-        for s in range(self.nsites):
-            for p in range(self.nproc):
+        # Only the anchor site of each cell can host the process
+        for p in range(self.nproc):
+            anchor = self._proc_anchor[p]
+            for cell in range(self.ncells):
+                s = cell * self.spuck + anchor
                 if self._check_process_at_site(p, s):
                     self._add_to_avail(p, s)
 
@@ -517,8 +536,10 @@ class KMCEngine:
         Uses neighbor-list fast path for single-site processes.
         """
         # Fast path: single-site process with max_offset <= 1
-        # Use neighbor list directly (5 sites in 2D vs 9 from grid)
-        if len(actions) == 1 and self._max_offset <= 1:
+        # Use neighbor list directly (5 sites in 2D vs 9 from grid).
+        # spuck=1 only: the neighbor list is same-s_in_cell, so for spuck>1
+        # it would miss anchor sites at other s_in_cell in affected cells.
+        if len(actions) == 1 and self._max_offset <= 1 and self.spuck == 1:
             offset, s_in_cell, _sp = actions[0]
             if all(o == 0 for o in offset) and s_in_cell == self._site_in_cell(site):
                 action_site = site
@@ -569,7 +590,8 @@ class KMCEngine:
     def _update_avail_after_execution(self, affected_sites):
         """Update available sites and per-site rates for all affected sites."""
         for site in affected_sites:
-            for p in range(self.nproc):
+            # Only processes anchored at this site's s_in_cell can live here
+            for p in self._procs_by_anchor[site % self.spuck]:
                 was_avail = site in self._site_in_avail[p]
                 is_avail = self._check_process_at_site(p, site)
 
