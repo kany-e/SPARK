@@ -124,8 +124,30 @@ class KMCEngine:
         # Setup BEP relations
         self._setup_bep_relations()
 
+        # Defaults needed by _rebuild_avail_sites (called inside
+        # _init_processes); callbacks are resolved right after, once
+        # process names exist, and per-site rates are rebuilt then.
+        self._rate_callback_by_id = {}
+        self._per_site_active = self._has_lateral
+
         # Initialize processes
         self._init_processes()
+
+        # Runtime rate callbacks: {process_name: fn(engine, proc_id,
+        # site) -> rate}. Consulted FIRST in _compute_site_rate; used
+        # for rate laws inexpressible as the static lateral/BEP forms
+        # (e.g. Rogal II.D clipped diffusion barriers).
+        for pname, fn in (getattr(project, 'rate_callbacks', None)
+                          or {}).items():
+            if pname not in self.process_names:
+                raise KeyError(f'rate_callbacks: unknown process '
+                               f'{pname!r}')
+            self._rate_callback_by_id[
+                self.process_names.index(pname)] = fn
+        # Per-site rates are needed when either static laterals or
+        # runtime callbacks are present.
+        self._per_site_active = (self._has_lateral
+                                 or bool(self._rate_callback_by_id))
 
         # Compute max offset range for neighbor updates
         self._compute_max_offset()
@@ -134,8 +156,8 @@ class KMCEngine:
         self.rates = np.zeros(self.nproc)
         self._update_rate_constants()
 
-        # Per-site rate tracking (only when lateral interactions exist)
-        if self._has_lateral:
+        # Per-site rate tracking (lateral interactions or callbacks)
+        if self._per_site_active:
             self._proc_total_rates = np.zeros(self.nproc)
             self._rebuild_per_site_rates()
 
@@ -479,7 +501,8 @@ class KMCEngine:
             idx = len(self._avail_sites[proc_id])
             self._site_in_avail[proc_id][site] = idx
             self._avail_sites[proc_id].append(site)
-            if self._has_lateral and hasattr(self, '_proc_total_rates'):
+            if self._per_site_active and hasattr(self,
+                                                 '_proc_total_rates'):
                 rate = self._compute_site_rate(proc_id, site)
                 self._avail_rates[proc_id].append(rate)
                 self._proc_total_rates[proc_id] += rate
@@ -493,7 +516,8 @@ class KMCEngine:
             avail = self._avail_sites[proc_id]
             rates = self._avail_rates[proc_id]
 
-            if self._has_lateral and hasattr(self, '_proc_total_rates'):
+            if self._per_site_active and hasattr(self,
+                                                 '_proc_total_rates'):
                 self._proc_total_rates[proc_id] -= rates[idx]
 
             # Swap with last
@@ -554,6 +578,12 @@ class KMCEngine:
         # General path: coordinate grid
         coord = self._site_to_coord(site)
         affected = set()
+        # NOTE on per-site (lateral/callback) rate invalidation: a
+        # rate at anchor A depends on sites up to max_cond_offset + 1
+        # cells away (NN of a condition site). _compute_max_offset
+        # already returns max|offset| + 1 >= max_cond_offset + 1, so
+        # this radius refreshes every NN-dependent rate; proven
+        # deterministically in stage21/test_runtime_engine.py.
         r = self._max_offset
         spuck = self.spuck
 
@@ -599,7 +629,7 @@ class KMCEngine:
                     self._add_to_avail(p, site)
                 elif not is_avail and was_avail:
                     self._remove_from_avail(p, site)
-                elif is_avail and was_avail and self._has_lateral:
+                elif is_avail and was_avail and self._per_site_active:
                     idx = self._site_in_avail[p][site]
                     old_rate = self._avail_rates[p][idx]
                     new_rate = self._compute_site_rate(p, site)
@@ -630,6 +660,10 @@ class KMCEngine:
           - With BEP: k = k_base * exp(-alpha * delta_delta_H / (kB*T))
             where delta_delta_H = E_lat_product - E_lat_reactant.
         """
+        cb = self._rate_callback_by_id.get(proc_id)
+        if cb is not None:
+            return cb(self, proc_id, site)
+
         base_rate = self.rates[proc_id]
 
         if not self._has_lateral:
@@ -707,15 +741,15 @@ class KMCEngine:
         params = {p.name: p.value for p in self.project.parameter_list}
         for i, expr in enumerate(self._proc_rate_exprs):
             self.rates[i] = evaluate_rate_expression(expr, params)
-        # Recompute per-site rates if lateral interactions are active
-        if self._has_lateral and hasattr(self, '_proc_total_rates'):
+        # Recompute per-site rates if per-site machinery is active
+        if self._per_site_active and hasattr(self, '_proc_total_rates'):
             self._rebuild_per_site_rates()
 
     def _update_accum_rates(self):
         """Build cumulative rate array for process selection."""
         total = 0.0
         for p in range(self.nproc):
-            if self._has_lateral:
+            if self._per_site_active:
                 total += self._proc_total_rates[p]
             else:
                 total += self.rates[p] * len(self._avail_sites[p])
@@ -756,7 +790,7 @@ class KMCEngine:
         if n_avail == 0:
             return False
 
-        if self._has_lateral:
+        if self._per_site_active:
             # Select site proportional to per-site rate using cumulative sum
             rates_list = self._avail_rates[proc_id]
             total_proc = self._proc_total_rates[proc_id]

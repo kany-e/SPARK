@@ -17,19 +17,20 @@ by the merge:
 
 ## The two real defects to fix / paths to add
 
-**1. Invalidation radius is one cell too small for NN-dependent
-rates.** `_get_affected_sites` collects cells within
-`r = _max_offset` of each action site. A per-site rate at anchor A
-depends on the occupancy of NN(condition sites of A), i.e. on lattice
-sites up to `_max_offset + 1` cells from A. Equivalently: an action at
-X changes the rate of anchors up to `_max_offset + 1` cells away. With
-`_max_offset = 1` (v14g) the current radius misses the 2-cell case
-(example: hop dst in the cell east of the anchor; dst's NN in the next
-cell east changes → anchor's Rogal barrier changes → anchor is 2 cells
-from the changed site). FIX: when per-site rates are active, extend
-the general-path radius to `_max_offset + 1`. Conservative and
-correct; cost measured in P4. (The spuck==1 fast path is unreachable
-for this model — spuck=19 — and stays untouched.)
+**1. Invalidation radius — suspected gap REFUTED during
+implementation (recorded as found).** The design-time concern: a
+per-site rate at anchor A depends on NN(condition sites of A), i.e.
+on sites up to `max_cond_offset + 1` cells away, which naively
+exceeds a radius of `max|offset|`. In fact `_compute_max_offset`
+returns `max|offset| + 1` — the +1 margin already equals the
+NN-dependency requirement (`r = max|off|+1 >= max_cond_offset + 1`,
+sufficient for NN radius <= 1 cell, which holds for every table
+entry). A first patch extended the radius by another +1; the
+deterministic worst-case test (`test_b2`: brbr dst NN at Chebyshev
+distance 2 from the anchor) then proved the anchor was ALREADY inside
+the unextended affected set, and the extension was reverted (it would
+have ~2x'd the update cost for nothing). The test is kept to pin the
+margin against future refactors of `_compute_max_offset`.
 
 **2. Rate callbacks.** Rogal §II.D diffusion is
 `E = E_tab + max(0, ΔE_eff)` — the clip makes it inexpressible as the
@@ -93,3 +94,18 @@ all reactions (LH/ER/cross), all Pd(100)-side processes
 (site-blocking only, HR2014 verbatim), spillover/exchange/PHASE_FLIP
 (HR2015 §3.4 explicit barriers). NN species for the LGH: {O, CO};
 Osub contributes nothing.
+
+## Post-design discovery (P2): 1.4g's THIRD lateral deviation — br-br NN pairs
+
+Rogal Fig. 2 (p155410-6, read during P2) names three NN pair classes:
+br-br, hol-hol, br-hol. The 1.4g enumeration (and hence the audited
+stage16 NN tables) carries NO br-br pairs — the V_*_brbr parameters
+(0.08/0.08/0.06 eV) exist in the model's parameter set but were never
+consumed by any process. The br-br adjacency is the brbr-hop pairing
+(ox_br_0@C <-> ox_br_1@C+(0,1); one partner per bridge, matching
+Fig. 2's single V_br-br arrow). Handling: ON mode uses the
+Fig.-2-complete topology (oxide_nn_full); OFF mode keeps the
+enumeration topology so as-built per-configuration parity is exact
+(a CO on the br-br partner must NOT block or shift an OFF-mode rate,
+because the as-built variants never condition that site). Both
+topologies are pinned by test (d) in the respective modes.
