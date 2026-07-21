@@ -1,0 +1,17 @@
+{
+ "engine": "spark-collapsed-OFF",
+ "seed": 2,
+ "steps": 100000,
+ "kmc_time": 0.15182270158612232,
+ "wall_s": 684.1833517551422,
+ "steps_per_s": 146.15965112782857,
+ "oxide_frac": 0.95,
+ "families": {
+  "CO_ads_ox": 1,
+  "CO_diff_ox": 97376,
+  "O_diff_pd": 2391,
+  "O_oxide_to_patch": 96,
+  "O_patch_to_oxide": 116,
+  "O_spillover": 20
+ }
+}
