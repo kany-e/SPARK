@@ -17,3 +17,52 @@
   steps 1.760e+05 wall    1079 s kmc 8.0173e+00 s flips 0 ox 0.9500
   steps 1.860e+05 wall    1143 s kmc 8.3855e+00 s flips 0 ox 0.9500
   steps 1.960e+05 wall    1203 s kmc 9.0631e+00 s flips 0 ox 0.9500
+  steps 2.060e+05 wall    1267 s kmc 9.4397e+00 s flips 0 ox 0.9500
+  steps 2.160e+05 wall    1329 s kmc 9.9067e+00 s flips 0 ox 0.9500
+  steps 2.260e+05 wall    1391 s kmc 1.0434e+01 s flips 0 ox 0.9500
+  steps 2.360e+05 wall    1453 s kmc 1.0911e+01 s flips 0 ox 0.9500
+  steps 2.460e+05 wall    1518 s kmc 1.1229e+01 s flips 0 ox 0.9500
+  steps 2.560e+05 wall    1579 s kmc 1.1861e+01 s flips 0 ox 0.9500
+  steps 2.660e+05 wall    1642 s kmc 1.2448e+01 s flips 0 ox 0.9500
+  steps 2.760e+05 wall    1704 s kmc 1.3103e+01 s flips 0 ox 0.9500
+  steps 2.860e+05 wall    1768 s kmc 1.3685e+01 s flips 0 ox 0.9500
+  steps 2.960e+05 wall    1832 s kmc 1.4274e+01 s flips 0 ox 0.9500
+  steps 3.060e+05 wall    1893 s kmc 1.5001e+01 s flips 0 ox 0.9500
+  steps 3.160e+05 wall    1958 s kmc 1.5308e+01 s flips 0 ox 0.9500
+  steps 3.260e+05 wall    2019 s kmc 1.5945e+01 s flips 0 ox 0.9500
+  steps 3.360e+05 wall    2083 s kmc 1.6480e+01 s flips 0 ox 0.9500
+  steps 3.460e+05 wall    2145 s kmc 1.7078e+01 s flips 0 ox 0.9500
+  steps 3.560e+05 wall    2207 s kmc 1.7656e+01 s flips 0 ox 0.9500
+  steps 3.660e+05 wall    2270 s kmc 1.8208e+01 s flips 0 ox 0.9500
+  steps 3.760e+05 wall    2332 s kmc 1.8928e+01 s flips 0 ox 0.9500
+  steps 3.860e+05 wall    2398 s kmc 1.9359e+01 s flips 0 ox 0.9500
+  steps 3.960e+05 wall    2464 s kmc 1.9820e+01 s flips 1 ox 0.9475
+{
+ "mode": "ON K=-1.10 raise=0.0",
+ "seed": 2,
+ "steps": 400000,
+ "kmc_time": 20.053971794323296,
+ "wall_s": 2490.339378595352,
+ "steps_per_s": 160.62067822483516,
+ "n_flips": 1,
+ "attribution": {
+  "O_diffusion": 1
+ },
+ "front_adjacent": 1,
+ "oxide_frac": 0.9475,
+ "families": {
+  "CO_ads_ox": 178,
+  "CO_ads_pd": 13,
+  "CO_des": 177,
+  "CO_diff_ox": 122437,
+  "CO_diff_pd": 420,
+  "O_diff_ox": 1,
+  "O_diff_pd": 239366,
+  "O_oxide_to_patch": 16864,
+  "O_patch_to_oxide": 16893,
+  "O_spillover": 1829,
+  "O_spillover_rev": 1808,
+  "PHASE_FLIP": 1,
+  "cross_react": 13
+ }
+}

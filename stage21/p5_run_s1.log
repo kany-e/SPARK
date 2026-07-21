@@ -17,3 +17,48 @@
   steps 1.820e+05 wall    1106 s kmc 8.2028e+00 s flips 0 ox 0.9500
   steps 1.940e+05 wall    1179 s kmc 8.7841e+00 s flips 0 ox 0.9500
   steps 2.040e+05 wall    1241 s kmc 9.2661e+00 s flips 0 ox 0.9500
+  steps 2.140e+05 wall    1307 s kmc 9.7925e+00 s flips 0 ox 0.9500
+  steps 2.240e+05 wall    1370 s kmc 1.0456e+01 s flips 0 ox 0.9500
+  steps 2.340e+05 wall    1437 s kmc 1.0885e+01 s flips 0 ox 0.9500
+  steps 2.440e+05 wall    1502 s kmc 1.1453e+01 s flips 0 ox 0.9500
+  steps 2.540e+05 wall    1569 s kmc 1.1943e+01 s flips 0 ox 0.9500
+  steps 2.640e+05 wall    1636 s kmc 1.2497e+01 s flips 0 ox 0.9500
+  steps 2.740e+05 wall    1705 s kmc 1.2994e+01 s flips 0 ox 0.9500
+  steps 2.840e+05 wall    1768 s kmc 1.3622e+01 s flips 0 ox 0.9500
+  steps 2.940e+05 wall    1831 s kmc 1.4136e+01 s flips 0 ox 0.9500
+  steps 3.040e+05 wall    1893 s kmc 1.4683e+01 s flips 0 ox 0.9500
+  steps 3.140e+05 wall    1954 s kmc 1.5163e+01 s flips 0 ox 0.9500
+  steps 3.240e+05 wall    2018 s kmc 1.5565e+01 s flips 0 ox 0.9500
+  steps 3.340e+05 wall    2086 s kmc 1.6052e+01 s flips 0 ox 0.9500
+  steps 3.440e+05 wall    2147 s kmc 1.6736e+01 s flips 0 ox 0.9500
+  steps 3.560e+05 wall    2218 s kmc 1.7466e+01 s flips 0 ox 0.9500
+  steps 3.660e+05 wall    2285 s kmc 1.7734e+01 s flips 0 ox 0.9500
+  steps 3.760e+05 wall    2346 s kmc 1.8287e+01 s flips 0 ox 0.9500
+  steps 3.860e+05 wall    2408 s kmc 1.8888e+01 s flips 0 ox 0.9500
+  steps 3.960e+05 wall    2472 s kmc 1.9532e+01 s flips 0 ox 0.9500
+  steps 4.060e+05 wall    2538 s kmc 2.0041e+01 s flips 0 ox 0.9500
+{
+ "mode": "ON K=-1.10 raise=0.0",
+ "seed": 1,
+ "steps": 406000,
+ "kmc_time": 20.041081549342657,
+ "wall_s": 2537.634234905243,
+ "steps_per_s": 159.99153637488672,
+ "n_flips": 0,
+ "attribution": {},
+ "front_adjacent": 0,
+ "oxide_frac": 0.95,
+ "families": {
+  "CO_ads_ox": 178,
+  "CO_ads_pd": 11,
+  "CO_des": 178,
+  "CO_diff_ox": 108653,
+  "CO_diff_pd": 211,
+  "O_diff_pd": 254015,
+  "O_oxide_to_patch": 16688,
+  "O_patch_to_oxide": 16715,
+  "O_spillover": 4680,
+  "O_spillover_rev": 4660,
+  "cross_react": 11
+ }
+}
