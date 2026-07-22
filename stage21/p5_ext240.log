@@ -19,3 +19,4 @@
   kmc    56.26 s  steps 1.002e+06  wall    4854 s  flips    6  ox 0.9350
 RESUME from kmc 66.434 s, step 1518000, wall_used 7200 s
   kmc    73.13 s  steps 2.172e+06  wall   10871 s  flips    8  ox 0.9300
+  kmc    95.06 s  steps 3.482e+06  wall   18265 s  flips   12  ox 0.9200
