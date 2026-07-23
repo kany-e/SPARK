@@ -20,3 +20,6 @@ build/
 stage21/p5_ext240_events_s1.jsonl
 stage21/p5_ext240_series_s1.jsonl
 stage21/p5_ext_resume.ckpt
+stage21/p5f7_240_events_s1.jsonl
+stage21/p5f7_240_series_s1.jsonl
+stage21/p5f7_resume.ckpt

@@ -181,7 +181,15 @@ class _RogalCallback:
         return rr.prefactor * math.exp(-rr.beta * barrier)
 
 
-def build_project(mode=None):
+def build_project(mode=None, fig7_corrected=False):
+    """fig7_corrected=True applies the stage-2.3 footprint fix to the
+    COLLAPSED model only (canonical XML untouched): the E
+    cross-reaction's O condition/action moves from ox_hol_0@(0,-1)
+    (south — the seeded/flipped column; the 1.3-era decorative-
+    distance error) to ox_hol_0@(+1,0) (the east-adjacent INTACT
+    upper hollow, HR2015 Figs 6+7 frame-locked; see reconkin
+    stage23_footprint/FOOTPRINT_AUDIT.md). Rate law unchanged
+    (0.95 eV); process renamed cross_react_E_fig7corrected."""
     pt = Project()
     pt.set_meta(model_name='multilattice_v14g_collapsed',
                 model_dimension=B.MODEL_DIMENSION)
@@ -197,6 +205,12 @@ def build_project(mode=None):
     for name, rate, conds, acts, tof in B.PROCESSES:
         if '_lat_' in name:
             continue
+        if fig7_corrected and name == 'cross_react_E_pd_D_with_ox_K':
+            fix = lambda lst: [
+                (s, (1, 0, 0) if s == 'ox_hol_0' else o, sp)
+                for s, o, sp in lst]
+            conds, acts = fix(conds), fix(acts)
+            name = 'cross_react_E_fig7corrected'
         pt.add_process(
             name=name,
             conditions=[Condition(Coord(offset=o, layer=B.LAYER_NAME,
