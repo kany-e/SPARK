@@ -22,3 +22,17 @@
 RESUME from kmc 117.570 s, step 4046000, wall_used 27603 s
   named checkpoint at kmc 120.00 s
   kmc   123.66 s  steps 4.984e+06  wall   31794 s  flips   27  ox 0.8825
+{
+ "mode": "ON K=-1.10 raise=0.0 FIG7CORR240",
+ "seed": 1,
+ "steps": 7434000,
+ "kmc_time": 157.53310707562335,
+ "wall_s": 43210.61983323097,
+ "n_flips": 51,
+ "attribution": {
+  "O_diffusion": 51
+ },
+ "front_adjacent": 51,
+ "oxide_frac": 0.8225,
+ "steps_per_s": 172.04104057500487
+}
