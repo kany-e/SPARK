@@ -16,3 +16,4 @@
   kmc    25.71 s  steps 4.960e+05  wall    3412 s  flips    0  ox 0.9500
   kmc    33.31 s  steps 6.100e+05  wall    4211 s  flips    0  ox 0.9500
   kmc    43.29 s  steps 7.680e+05  wall    5313 s  flips    2  ox 0.9450
+  kmc    56.26 s  steps 1.006e+06  wall    6991 s  flips    5  ox 0.9375
