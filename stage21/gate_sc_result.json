@@ -1,0 +1,95 @@
+{
+ "reached_kmc": 121.1962,
+ "n_flips": 3,
+ "flips": {
+  "2,11,120.5947": {
+   "ox_hol_0": {
+    "true": [
+     "O_oxide_to_patch",
+     120.59471
+    ],
+    "econ": [
+     "O_oxide_to_patch",
+     120.59471
+    ]
+   },
+   "ox_hol_1": {
+    "true": [
+     "O_oxide_to_patch",
+     120.58961
+    ],
+    "econ": [
+     "O_oxide_to_patch",
+     120.58961
+    ]
+   }
+  },
+  "2,12,120.6047": {
+   "ox_hol_0": {
+    "true": [
+     "O_oxide_to_patch",
+     120.59152
+    ],
+    "econ": [
+     "O_oxide_to_patch",
+     120.59152
+    ]
+   },
+   "ox_hol_1": {
+    "true": [
+     "O_oxide_to_patch",
+     120.60466
+    ],
+    "econ": [
+     "O_oxide_to_patch",
+     120.60466
+    ]
+   }
+  },
+  "2,15,120.4477": {
+   "ox_hol_0": {
+    "true": [
+     "cross_react",
+     120.4477
+    ],
+    "econ": [
+     "cross_react",
+     120.4477
+    ]
+   },
+   "ox_hol_1": {
+    "true": [
+     "O_oxide_to_patch",
+     120.44292
+    ],
+    "econ": [
+     "O_oxide_to_patch",
+     120.44292
+    ]
+   }
+  }
+ },
+ "hollow_slots": 6,
+ "econ_vs_true_mismatches": 0,
+ "emptytally_N": 275086,
+ "emptytally_CO_diff_ox_pct": 98.963,
+ "last_vacater": [
+  "O_oxide_to_patch",
+  "O_oxide_to_patch",
+  "cross_react"
+ ],
+ "both_vacancies": [
+  [
+   "O_oxide_to_patch",
+   "O_oxide_to_patch"
+  ],
+  [
+   "O_oxide_to_patch",
+   "O_oxide_to_patch"
+  ],
+  [
+   "O_oxide_to_patch",
+   "cross_react"
+  ]
+ ]
+}

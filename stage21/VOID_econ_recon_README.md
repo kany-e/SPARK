@@ -1,27 +1,36 @@
-# VOID — economy-log emptier reconstruction (Stage 2.4/2.6)
+# CORRECTION — economy-log emptier reconstruction is VALIDATED, not void
 
-These artifacts are RETAINED but their emptier-attribution numbers are
-**VOID**, annotated here per the record-keeping rule (never silently
-delete or overwrite a withdrawn result):
+> An earlier version of this file (and commit 5308c0a) declared the
+> economy-log emptier reconstruction VOID because ≈99 % of hollow-
+> emptying events are unlogged `CO_diff_ox`. That is **retracted**: the
+> self-consistent gate run to actual flips shows the log and engine
+> truth AGREE at the flip instant (`gate_sc_result.json`: N=3 flips, 6
+> hollow-slots, 0 mismatches). See `reconkin/stage26_attribution/
+> ATTRIBUTION_RULE.md` for the corrected verdict.
 
-- `econ_reconstruct_vacancies.py` / `econ_recon_vacancies.json`
-- `hollow_divacancy_count.py`
-- the log-derived emptier column of `replay_flipblock.py`
-- the **"0/51 cross under a last-vacater rule"** figure
+## Status of the artifacts
 
-Reason (Stage 2.6, `reconkin/stage26_attribution/ATTRIBUTION_RULE.md`):
-the economy log omits `CO_diff_ox`, which is **≈99.3 % of all
-oxide-hollow-emptying events** (self-consistent gate
-`gate_selfconsistent.py`: 81 215 / 81 829 CO_diff_ox at kmc 120.0–120.30,
-all intact-front). The reconstruction sees <1 % of the events that set
-hollows empty, so it cannot attribute any flip's emptier. The
-last-emptier rule is additionally ill-posed here (the true last emptier
-is a reversible CO flicker, not a committing O-removal). A meaningful
-attribution requires net-O-removal / net-relocation accounting
-(`O_RELOCATION_HYPOTHESIS.md`).
+- `econ_reconstruct_vacancies.py` / `econ_recon_vacancies.json`: the
+  **method is validated** (the economy log captures the flip-*triggering*
+  emptier — the O-removal that completes the divacancy; the 99 %
+  CO_diff_ox is reversible flicker on non-triggering hollows and does not
+  reach the flip trigger). The specific p5f7_240 window numbers are one
+  realization that cannot be ground-truth-checked because that trajectory
+  is not bit-exactly replayable (`gate_exactness_check.py`) — retained,
+  not void.
+- The **"0/51 cross (last-vacater)"** figure: **not robust**, not void —
+  the self-consistent gate shows cross completes a divacancy in ~1/3
+  flips; the last-vacater convention is a near-tie (5 ms) that decides
+  the count. Retained with this caveat.
+- `hollow_divacancy_count.py`: uses the (validated) reconstruction; its
+  intact-target sibling counts are method-valid, trajectory-specific.
 
-Also void by construction: the per-flip **cross-trajectory** gate
-(`gate_replay.py`, `gate_compare.py`) — the p5f7_240 trajectory is not
-bit-exactly replayable (`gate_exactness_check.py`: times+family sequence
-match, cells diverge from step 0), so it was superseded by the
-self-consistent single-trajectory gate. Retained for provenance.
+## The genuinely superseded piece
+
+The per-flip **cross-trajectory** gate (`gate_replay.py`,
+`gate_compare.py`) is superseded — not because the reconstruction is
+wrong, but because p5f7_240 cannot be bit-exactly replayed
+(`gate_exactness_check.py`: times + family sequence match the economy log
+to 4 decimals, cells diverge from step 0). The self-consistent
+single-trajectory gate (`gate_selfconsistent.py`) replaced it and
+delivered the validation above. Retained for provenance.
