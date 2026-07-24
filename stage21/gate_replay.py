@@ -76,7 +76,10 @@ def main():
     eng._rebuild_avail_sites()
     eng._rebuild_per_site_rates()
 
+    relevant = set(hol_empty_writes) | flip_pids
     def hook(pid, site, t):
+        if pid not in relevant:
+            return                 # pure observer: skip non-emptier/non-flip
         acell = site // SPUCK
         coord = eng._site_to_coord(site)
         if pid in hol_empty_writes:
@@ -96,7 +99,7 @@ def main():
 
     eng.event_hook = hook
     t0 = time.time()
-    next_ck = 600.0
+    next_ck = 180.0
     while eng.kmc_time < KMC_STOP:
         eng.do_steps(5000)
         if time.time() - t0 > next_ck:
@@ -105,7 +108,7 @@ def main():
                              last_empt=last_empt, ground=ground),
                         open(CKPT + '.tmp', 'wb'))
             os.replace(CKPT + '.tmp', CKPT)
-            next_ck += 600.0
+            next_ck += 180.0
             print(f'  kmc {eng.kmc_time:.2f} wall {time.time()-t0:.0f}s '
                   f'flips-captured {len(ground)}', flush=True)
     json.dump(ground, open(os.path.join(HERE,
