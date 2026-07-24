@@ -168,6 +168,13 @@ class KMCEngine:
         self.kmc_time = 0.0
         self.kmc_step = 0
         self.event_hook = None
+        # Optional occupancy-delta observer (Stage 2.7): captures the
+        # TRUE old->new species of every site an executed process
+        # writes, from inside the execution loop where the ground truth
+        # is unambiguous (unlike event_hook, which fires post-write).
+        # None by default -> bit-identical to the un-logged engine (no
+        # RNG consumption, no state change, one attr check per action).
+        self.occupancy_hook = None
         self.procstat = np.zeros(self.nproc, dtype=np.int64)
         self._prev_procstat = np.zeros(self.nproc, dtype=np.int64)
         self._prev_time = 0.0
@@ -813,9 +820,18 @@ class KMCEngine:
 
         # Execute: update lattice
         coord = self._site_to_coord(site)
+        occ_hook = self.occupancy_hook
         for offset, s_in_cell, new_sp in self._proc_actions[proc_id]:
             neighbor = tuple(c + o for c, o in zip(coord, offset))
-            self.lattice[self._coord_to_site(neighbor, s_in_cell)] = new_sp
+            nsite = self._coord_to_site(neighbor, s_in_cell)
+            if occ_hook is not None:
+                old_sp = self.lattice[nsite]
+                if old_sp != new_sp:
+                    # (kmc_time, site, s_in_cell, old_sp, new_sp, proc_id)
+                    # additive observer: cannot alter selection/RNG.
+                    occ_hook(self.kmc_time, nsite, s_in_cell,
+                             old_sp, new_sp, proc_id)
+            self.lattice[nsite] = new_sp
 
         # Update bookkeeping
         affected = self._get_affected_sites(
