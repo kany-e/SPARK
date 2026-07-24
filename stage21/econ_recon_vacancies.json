@@ -1,0 +1,74 @@
+{
+ "2,15,120.351": [
+  [
+   "ox_hol_0",
+   "cross_react",
+   120.3401
+  ],
+  [
+   "ox_hol_1",
+   "O_oxide_to_patch",
+   120.3506
+  ]
+ ],
+ "2,11,121.41": [
+  [
+   "ox_hol_0",
+   "O_oxide_to_patch",
+   121.4103
+  ],
+  [
+   "ox_hol_1",
+   "O_oxide_to_patch",
+   121.4075
+  ]
+ ],
+ "1,7,123.875": [
+  [
+   "ox_hol_0",
+   "O_oxide_to_patch",
+   123.8752
+  ],
+  [
+   "ox_hol_1",
+   "O_diff_ox",
+   123.8516
+  ]
+ ],
+ "2,9,123.992": [
+  [
+   "ox_hol_0",
+   "O_oxide_to_patch",
+   123.992
+  ],
+  [
+   "ox_hol_1",
+   "O_diff_ox",
+   123.9648
+  ]
+ ],
+ "2,16,124.822": [
+  [
+   "ox_hol_0",
+   "O_oxide_to_patch",
+   124.7934
+  ],
+  [
+   "ox_hol_1",
+   "O_oxide_to_patch",
+   124.8215
+  ]
+ ],
+ "2,12,125.218": [
+  [
+   "ox_hol_0",
+   "O_oxide_to_patch",
+   125.2178
+  ],
+  [
+   "ox_hol_1",
+   "O_oxide_to_patch",
+   125.1917
+  ]
+ ]
+}

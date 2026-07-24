@@ -29,3 +29,5 @@ stage21/flipblock_replay.log
 stage21/flipblock_events.json
 stage21/flipblock_replay_from0.log
 stage21/flipblock_replay_from0.json
+stage21/gate_replay.ckpt
+stage21/gate_replay.log
