@@ -33,3 +33,6 @@ stage21/gate_replay.ckpt
 stage21/gate_replay.log
 stage21/gate_sc.ckpt
 stage21/*.log
+stage21/stage28_*.ckpt
+stage21/stage28_*.ckpt.prev
+stage21/stage28_*.log

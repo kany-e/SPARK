@@ -37,9 +37,13 @@ from run_p3_sidebyside import family  # noqa: E402
 
 H0, H1 = SITE_IDX['ox_hol_0'], SITE_IDX['ox_hol_1']
 LY = 20
-# processes whose O motion crosses (or reacts at) the oxide/patch boundary
-O_TO_PATCH = 'O_oxide_to_patch'      # intact oxide hollow O -> flipped patch
-O_FROM_PATCH = 'O_patch_to_oxide'    # reverse
+# processes whose O motion crosses (or reacts at) the oxide/patch
+# boundary. Canonical actions verified (stage 2.8): O_oxide_to_patch
+# moves east-neighbor ox_hol O -> own pd_hol_E; O_spillover moves
+# same-cell ox_hol O -> pd_hol_E; O_patch_to_oxide reverses the former;
+# O_spillover_rev returns pd_hol_E O to ox_hol as Osub.
+O_TO_PATCH = ('O_oxide_to_patch', 'O_spillover')
+O_FROM_PATCH = ('O_patch_to_oxide', 'O_spillover_rev')
 O_TO_CO2 = ('cross_react', 'LH_ox')  # O removed as CO2
 
 
@@ -67,14 +71,10 @@ class OccupancyAccumulator:
         #     PHASE_FLIP writes hollows to null, not empty -> excluded.
         if s_in_cell in (H0, H1) and new_sp == self.empty_id:
             self.last_empt[site] = (fam, t)
-        # (2) boundary O-flux: bin the O-transport / O-removal families.
-        b = int(t // self.flux_bin)
-        if fam == O_TO_PATCH:
-            self.flux[b]['O_intact_to_flipped'] += 1
-        elif fam == O_FROM_PATCH:
-            self.flux[b]['O_flipped_to_intact'] += 1
-        elif fam in O_TO_CO2:
-            self.flux[b]['O_to_CO2'] += 1
+        # (2) boundary O-flux: bin the O-transport / O-removal families,
+        # keeping per-family resolution (summary aggregates directions).
+        if fam in O_TO_PATCH or fam in O_FROM_PATCH or fam in O_TO_CO2:
+            self.flux[int(t // self.flux_bin)][fam] += 1
 
     def evt(self, pid, site, t):
         if pid not in self._flip_pids:
@@ -100,13 +100,14 @@ class OccupancyAccumulator:
         flux_rows = []
         for b in sorted(self.flux):
             c = self.flux[b]
-            net = c['O_intact_to_flipped'] - c['O_flipped_to_intact']
+            fwd = sum(c[f] for f in O_TO_PATCH)
+            rev = sum(c[f] for f in O_FROM_PATCH)
+            co2 = sum(c[f] for f in O_TO_CO2)
             flux_rows.append(dict(
                 bin=b, t_lo=b * self.flux_bin,
-                O_intact_to_flipped=c['O_intact_to_flipped'],
-                O_flipped_to_intact=c['O_flipped_to_intact'],
-                net_O_intact_to_flipped=net,
-                O_to_CO2=c['O_to_CO2']))
+                O_intact_to_flipped=fwd, O_flipped_to_intact=rev,
+                net_O_intact_to_flipped=fwd - rev, O_to_CO2=co2,
+                by_family=dict(c)))
         return dict(n_flips=len(self.flips),
                     n_occupancy_deltas=self.n_occ,
                     last_vacater=dict(lv),
