@@ -1,0 +1,24 @@
+{
+ "arms": {},
+ "unraised": {
+  "tag": "UNRAISED p5f7",
+  "raise_oxide": 0.0,
+  "seed": 1,
+  "n_flips_total": 51,
+  "kmc_phi0.9": 116.39,
+  "kmc_phi0.875": 124.82,
+  "kmc_phi0.85": 136.95,
+  "mean_interflip": 2.513,
+  "cross_in_window": 153,
+  "cross_per_kmcs": 1.1172,
+  "trig_attribution_window": {
+   "O_diffusion": 40
+  },
+  "trig_attribution": {
+   "O_diffusion": 51
+  },
+  "steps_per_kmcs": 40305.0,
+  "wall_per_kmcs": 257.1,
+  "window_tmax_kmc": 136.95
+ }
+}
