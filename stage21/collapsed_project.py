@@ -95,10 +95,18 @@ def _nn_meta(site, off, partner, full):
 class _RogalCallback:
     """One instance shared by all runtime processes of an engine run."""
 
-    def __init__(self, laterals, K_nearpatch=-1.40, raise_oxide=0.0):
+    def __init__(self, laterals, K_nearpatch=-1.40, raise_oxide=0.0,
+                 raise_scope=None):
         self.laterals = laterals
         self.K = K_nearpatch
         self.raise_ox = raise_oxide
+        # raise_scope: None -> raise applies to ALL runtime oxide
+        # diffusion (legacy full scope); 'CO' -> CO_diff_ox classes only
+        # (stage 2.8 scoped device: the measured flood is 97-98.5% CO,
+        # O oxide diffusion contributes ~nothing to cost, and raising
+        # the 1.1-1.4 eV O hops would delete a demonstrated
+        # flip-participating channel with no efficiency gain).
+        self.raise_scope = raise_scope
         self._rr = {}
         self._meta = {}
         full = bool(laterals)   # ON: Fig.-2-complete; OFF: enumeration
@@ -177,7 +185,10 @@ class _RogalCallback:
             ed = rr.e_eff(sp, m['dst_kind'], nn_d, np_d)
         except BlockedMove:
             return 0.0
-        barrier = m['E_tab'] + rr.raise_oxide + max(0.0, ed - es)
+        r_ox = (rr.raise_oxide
+                if (self.raise_scope is None or sp == self.raise_scope)
+                else 0.0)
+        barrier = m['E_tab'] + r_ox + max(0.0, ed - es)
         return rr.prefactor * math.exp(-rr.beta * barrier)
 
 

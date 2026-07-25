@@ -76,6 +76,9 @@ def patch_pop(eng, co_id, o_id):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--raise-oxide', type=float, required=True)
+    ap.add_argument('--raise-scope', default=None,
+                    help="None=all oxide diffusion; 'CO'=CO_diff_ox only "
+                         "(the stage-2.8 scoped device)")
     ap.add_argument('--target-phi', type=float, required=True)
     ap.add_argument('--seed', type=int, default=1)
     ap.add_argument('--tag', required=True)
@@ -87,7 +90,8 @@ def main():
     out_path = os.path.join(HERE, f'stage28_{args.tag}_result.json')
 
     pt = build_project(dict(laterals=True, K_nearpatch=-1.10,
-                            raise_oxide=args.raise_oxide),
+                            raise_oxide=args.raise_oxide,
+                            raise_scope=args.raise_scope),
                        fig7_corrected=True)
     eng = KMCEngine(pt, size=[20, 20], print_rates=False, banner=False)
     eng.parameters.T = 393.0
@@ -107,6 +111,8 @@ def main():
             st = pickle.load(f)
         assert st['raise_oxide'] == args.raise_oxide, \
             'checkpoint raise mismatch'
+        assert st.get('raise_scope') == args.raise_scope, \
+            'checkpoint raise-scope mismatch'
         eng.lattice[:] = st['lattice']
         eng.procstat[:] = st['procstat']
         eng.kmc_time = float(st['kmc_time'])
@@ -146,7 +152,8 @@ def main():
 
     def save(wall_total):
         state = dict(
-            raise_oxide=args.raise_oxide, seed=args.seed,
+            raise_oxide=args.raise_oxide, raise_scope=args.raise_scope,
+            seed=args.seed,
             lattice=eng.lattice.copy(), procstat=eng.procstat.copy(),
             kmc_time=eng.kmc_time, kmc_step=eng.kmc_step,
             rng=np.random.get_state(), wall_used=wall_total,
@@ -204,7 +211,8 @@ def main():
     for _t, _c, _tr, b, _f in trig.flips:
         trig_buckets[b] = trig_buckets.get(b, 0) + 1
     out = dict(
-        tag=args.tag, raise_oxide=args.raise_oxide, seed=args.seed,
+        tag=args.tag, raise_oxide=args.raise_oxide,
+        raise_scope=args.raise_scope, seed=args.seed,
         target_phi=args.target_phi, kmc_time=float(eng.kmc_time),
         steps=int(eng.kmc_step), wall_s=wall_total,
         phi_final=H.phi(eng), families=famtot,
