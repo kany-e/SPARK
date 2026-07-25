@@ -41,12 +41,18 @@ def arm_summary(res):
     if len(ft) >= 2:
         iv = [ft[i + 1] - ft[i] for i in range(min(len(ft), NWIN) - 1)]
         out['mean_interflip'] = round(sum(iv) / len(iv), 3)
-    # cross events within the window (t <= 40th flip)
+    # cross events within the window (t <= 40th flip).
+    # NOTE: flux_bins count occupancy DELTAS; every counted family
+    # (cross, O_oxide_to_patch/rev, spillover/rev, LH) writes exactly
+    # TWO sites per event (verified against canonical actions), so
+    # deltas/2 = events. The unraised comparator counts economy-log
+    # EVENTS directly (1/event) — the /2 makes them commensurable.
     tmax = ft[NWIN - 1] if len(ft) >= NWIN else res['kmc_time']
     cross = 0
     for row in res['occupancy']['flux_bins']:
         if row['t_lo'] + 1.0 <= tmax:
             cross += row['by_family'].get('cross_react', 0)
+    cross //= 2
     out['cross_in_window'] = cross
     out['cross_per_kmcs'] = round(cross / tmax, 4) if tmax else None
     # attribution: exact conventions over window flips

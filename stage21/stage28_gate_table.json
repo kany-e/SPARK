@@ -1,5 +1,110 @@
 {
- "arms": {},
+ "arms": {
+  "r050s1": {
+   "tag": "r050s1",
+   "raise_oxide": 0.5,
+   "seed": 1,
+   "n_flips_total": 40,
+   "kmc_phi0.9": 109.67,
+   "kmc_phi0.875": 126.01,
+   "kmc_phi0.85": 142.73,
+   "mean_interflip": 2.435,
+   "cross_in_window": 151,
+   "cross_per_kmcs": 1.058,
+   "last_vacater": {
+    "O_oxide_to_patch": 40
+   },
+   "both_vacancies": {
+    "O_diff_ox+O_oxide_to_patch": 13,
+    "O_oxide_to_patch+cross_react": 4,
+    "O_oxide_to_patch+O_oxide_to_patch": 23
+   },
+   "trig_attribution": {
+    "O_diffusion": 40
+   },
+   "steps_per_kmcs": 9965.0,
+   "patch_CO_end": 4,
+   "wall_per_kmcs": 56.7
+  },
+  "r050s2": {
+   "tag": "r050s2",
+   "raise_oxide": 0.5,
+   "seed": 2,
+   "n_flips_total": 42,
+   "kmc_phi0.9": 108.4,
+   "kmc_phi0.875": 126.28,
+   "kmc_phi0.85": 137.26,
+   "mean_interflip": 3.106,
+   "cross_in_window": 150,
+   "cross_per_kmcs": 1.0928,
+   "last_vacater": {
+    "O_oxide_to_patch": 40
+   },
+   "both_vacancies": {
+    "O_diff_ox+O_oxide_to_patch": 13,
+    "O_oxide_to_patch+O_oxide_to_patch": 22,
+    "O_oxide_to_patch+cross_react": 5
+   },
+   "trig_attribution": {
+    "O_diffusion": 42
+   },
+   "steps_per_kmcs": 11472.0,
+   "patch_CO_end": 1,
+   "wall_per_kmcs": 64.9
+  },
+  "r060s1": {
+   "tag": "r060s1",
+   "raise_oxide": 0.6,
+   "seed": 1,
+   "n_flips_total": 41,
+   "kmc_phi0.9": 109.84,
+   "kmc_phi0.875": 134.92,
+   "kmc_phi0.85": 153.44,
+   "mean_interflip": 3.079,
+   "cross_in_window": 166,
+   "cross_per_kmcs": 1.0818,
+   "last_vacater": {
+    "O_oxide_to_patch": 40
+   },
+   "both_vacancies": {
+    "O_diff_ox+O_oxide_to_patch": 19,
+    "O_oxide_to_patch+O_oxide_to_patch": 18,
+    "O_oxide_to_patch+cross_react": 3
+   },
+   "trig_attribution": {
+    "O_diffusion": 41
+   },
+   "steps_per_kmcs": 9019.0,
+   "patch_CO_end": 5,
+   "wall_per_kmcs": 51.5
+  },
+  "r060s2": {
+   "tag": "r060s2",
+   "raise_oxide": 0.6,
+   "seed": 2,
+   "n_flips_total": 40,
+   "kmc_phi0.9": 118.64,
+   "kmc_phi0.875": 135.02,
+   "kmc_phi0.85": 151.09,
+   "mean_interflip": 3.113,
+   "cross_in_window": 159,
+   "cross_per_kmcs": 1.0523,
+   "last_vacater": {
+    "O_oxide_to_patch": 40
+   },
+   "both_vacancies": {
+    "O_diff_ox+O_oxide_to_patch": 14,
+    "O_oxide_to_patch+O_oxide_to_patch": 23,
+    "O_oxide_to_patch+cross_react": 3
+   },
+   "trig_attribution": {
+    "O_diffusion": 40
+   },
+   "steps_per_kmcs": 9149.0,
+   "patch_CO_end": 2,
+   "wall_per_kmcs": 52.8
+  }
+ },
  "unraised": {
   "tag": "UNRAISED p5f7",
   "raise_oxide": 0.0,
