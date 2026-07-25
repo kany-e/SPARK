@@ -18,7 +18,7 @@ relaunch r060s1 0.6 1
 relaunch r060s2 0.6 2
 end=$((SECONDS+${2:-105}))
 while [ $SECONDS -lt $end ]; do
-  n=$(ls stage28_r0*_result.json 2>/dev/null | wc -l)
+  n=$(ls stage28_r0?0s?_result.json 2>/dev/null | wc -l)
   [ "$n" -ge 4 ] && break
   sleep 5
 done
