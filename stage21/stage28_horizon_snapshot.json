@@ -1,0 +1,80 @@
+{
+ "r050s1": {
+  "kmc": 337.5,
+  "phi": null,
+  "n_flips": 128,
+  "t50": null,
+  "last_vacater": {
+   "O_oxide_to_patch": 127,
+   "cross_react": 1
+  },
+  "both_vac": {
+   "O_diff_ox+O_oxide_to_patch": 58,
+   "O_oxide_to_patch+cross_react": 7,
+   "O_oxide_to_patch+O_oxide_to_patch": 62,
+   "O_diff_ox+cross_react": 1
+  },
+  "cross_total": 554,
+  "co2": 555,
+  "net_O": -134,
+  "shuffle_each_way": 766713
+ },
+ "r050s2": {
+  "kmc": 326.7,
+  "phi": null,
+  "n_flips": 182,
+  "t50": 323.7,
+  "last_vacater": {
+   "O_oxide_to_patch": 182
+  },
+  "both_vac": {
+   "O_diff_ox+O_oxide_to_patch": 72,
+   "O_oxide_to_patch+O_oxide_to_patch": 98,
+   "O_oxide_to_patch+cross_react": 12
+  },
+  "cross_total": 793,
+  "co2": 794,
+  "net_O": -195,
+  "shuffle_each_way": 776043
+ },
+ "r060s1": {
+  "kmc": 345.9,
+  "phi": null,
+  "n_flips": 172,
+  "t50": null,
+  "last_vacater": {
+   "O_oxide_to_patch": 170,
+   "cross_react": 2
+  },
+  "both_vac": {
+   "O_diff_ox+O_oxide_to_patch": 71,
+   "O_oxide_to_patch+O_oxide_to_patch": 87,
+   "O_oxide_to_patch+cross_react": 12,
+   "O_diff_ox+cross_react": 2
+  },
+  "cross_total": 720,
+  "co2": 721,
+  "net_O": -166,
+  "shuffle_each_way": 774589
+ },
+ "r060s2": {
+  "kmc": 328.5,
+  "phi": null,
+  "n_flips": 162,
+  "t50": null,
+  "last_vacater": {
+   "O_oxide_to_patch": 161,
+   "cross_react": 1
+  },
+  "both_vac": {
+   "O_diff_ox+O_oxide_to_patch": 64,
+   "O_oxide_to_patch+O_oxide_to_patch": 87,
+   "O_oxide_to_patch+cross_react": 10,
+   "O_diff_ox+cross_react": 1
+  },
+  "cross_total": 664,
+  "co2": 664,
+  "net_O": -166,
+  "shuffle_each_way": 843390
+ }
+}
