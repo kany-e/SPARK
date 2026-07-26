@@ -1,0 +1,23 @@
+{
+ "tag": "coadfix_s1",
+ "kmc": 345.84,
+ "n_flips": 180,
+ "T50": 344.7,
+ "last_vacater": {
+  "O_oxide_to_patch": 165,
+  "cross_react": 15
+ },
+ "both_vacancies": {
+  "O_diff_ox+O_oxide_to_patch": 59,
+  "O_oxide_to_patch+O_oxide_to_patch": 94,
+  "O_diff_ox+cross_react": 15,
+  "O_oxide_to_patch+cross_react": 12
+ },
+ "flux_events": {
+  "O_spillover": 48223,
+  "O_patch_to_oxide": 730138,
+  "O_oxide_to_patch": 729753,
+  "cross_react": 786,
+  "O_spillover_rev": 48025
+ }
+}
