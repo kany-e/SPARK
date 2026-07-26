@@ -192,7 +192,8 @@ class _RogalCallback:
         return rr.prefactor * math.exp(-rr.beta * barrier)
 
 
-def build_project(mode=None, fig7_corrected=False):
+def build_project(mode=None, fig7_corrected=False,
+                  coadsorption_fix=False):
     """fig7_corrected=True applies the stage-2.3 footprint fix to the
     COLLAPSED model only (canonical XML untouched): the E
     cross-reaction's O condition/action moves from ox_hol_0@(0,-1)
@@ -222,6 +223,19 @@ def build_project(mode=None, fig7_corrected=False):
                 for s, o, sp in lst]
             conds, acts = fix(conds), fix(acts)
             name = 'cross_react_E_fig7corrected'
+        if coadsorption_fix and name.startswith('O_oxide_to_patch'):
+            # Stage 2.9 deviation #8: enforce HR2015 p1205's O/CO
+            # coadsorption exclusion ("O and CO coadsorption on hollow
+            # and bridge sites, respectively, is not possible") on the
+            # one entry channel that lacked it. Condition set mirrors
+            # O_spillover_fwd / the p1206-1207 pop-up gate: the target
+            # cell's pd_hol_E-adjacent four bridges must be empty.
+            conds = list(conds) + [
+                ('pd_br_01_11_x', (0, 0, 0), 'empty'),
+                ('pd_br_01_02_y', (0, 0, 0), 'empty'),
+                ('pd_br_11_12_y', (0, 0, 0), 'empty'),
+                ('pd_br_02_12_x', (0, 0, 0), 'empty')]
+            name = name + '_coadfix'
         pt.add_process(
             name=name,
             conditions=[Condition(Coord(offset=o, layer=B.LAYER_NAME,
