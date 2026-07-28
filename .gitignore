@@ -36,3 +36,4 @@ stage21/*.log
 stage21/stage28_*.ckpt
 stage21/stage28_*.ckpt.prev
 stage21/stage28_*.log
+stage21/stage28_*_result.json
