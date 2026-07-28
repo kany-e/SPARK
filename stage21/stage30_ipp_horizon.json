@@ -1,0 +1,14 @@
+{
+ "tag": "ipp_s1",
+ "kmc": 277.05,
+ "phi": 0.725,
+ "n_flips": 90,
+ "last_vacater": {
+  "O_oxide_to_patch": 72,
+  "cross_react": 16,
+  "LH_ox": 2
+ },
+ "both_vac_cross": 32,
+ "cross": 397,
+ "CO_ads_pd": 459
+}
