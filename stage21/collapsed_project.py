@@ -193,7 +193,7 @@ class _RogalCallback:
 
 
 def build_project(mode=None, fig7_corrected=False,
-                  coadsorption_fix=False):
+                  coadsorption_fix=False, interpatch_fix=False):
     """fig7_corrected=True applies the stage-2.3 footprint fix to the
     COLLAPSED model only (canonical XML untouched): the E
     cross-reaction's O condition/action moves from ox_hol_0@(0,-1)
@@ -223,6 +223,25 @@ def build_project(mode=None, fig7_corrected=False,
                 for s, o, sp in lst]
             conds, acts = fix(conds), fix(acts)
             name = 'cross_react_E_fig7corrected'
+        if interpatch_fix and name.startswith('CO_diff_pd_xc'):
+            # Stage 3.0 deviation #9 (secondary leg): the two existing
+            # y-direction inter-cell CO hops carried only (src CO, dst
+            # empty) — no site-blocking gate. Add the paper's p1207
+            # destination gate at the available granularity: the
+            # destination cell's pd_hol_E and the destination bridge's
+            # NN active bridges must be empty.
+            if name.endswith('_to_pd_br_11_21_x'):
+                # dst = 11_21_x in the anchor cell (0,0)
+                conds = list(conds) + [
+                    ('pd_hol_E', (0, 0, 0), 'empty'),
+                    ('pd_br_11_12_y', (0, 0, 0), 'empty')]
+            else:
+                # dst = 02_12_x in the (0,-1) cell
+                conds = list(conds) + [
+                    ('pd_hol_E', (0, -1, 0), 'empty'),
+                    ('pd_br_01_02_y', (0, -1, 0), 'empty'),
+                    ('pd_br_11_12_y', (0, -1, 0), 'empty')]
+            name = name + '_ippfix'
         if coadsorption_fix and name.startswith('O_oxide_to_patch'):
             # Stage 2.9 deviation #8: enforce HR2015 p1205's O/CO
             # coadsorption exclusion ("O and CO coadsorption on hollow
@@ -247,6 +266,53 @@ def build_project(mode=None, fig7_corrected=False,
             rate_constant=rate, tof_count=tof)
         n93 += 1
     assert n93 == 93, n93
+    if interpatch_fix:
+        # Stage 3.0 deviation #9 (primary leg): x-direction inter-cell
+        # CO transport is ABSENT from canonical (exhaustive scan: no
+        # CO_diff_pd hop spans dx != 0), while the paper (p1207)
+        # requires inter-patch CO diffusion under the Pd(100)
+        # site-blocking gate and the builder created the x-links for O
+        # (O_diff_pd_xc_*_1_0) but not CO. Add ONE x-link (both
+        # directions), mirroring the y-topology's single-link density:
+        # pd_br_11_12_y@(0,0) <-> pd_br_01_02_y@(1,0), the closest
+        # active-bridge pair across the +x border (0.632 cell units ~
+        # sqrt2 Pd(100) lattice constants; an effective hop through the
+        # unrepresented intermediate bridge, barrier unchanged). Rate =
+        # the raised Pd(100) CO hop (E_diff_CO_pd_brbr+E_diff_raise),
+        # identical both directions (detailed balance). Destination
+        # gate per p1207 at the available granularity: dst cell's
+        # pd_hol_E + the dst bridge's NN active bridges empty.
+        _RATE_PD = ('1/(beta*h)*exp(-(beta*(E_diff_CO_pd_brbr'
+                    '+E_diff_raise)*eV))')
+        _xlinks = [
+            ('CO_diff_pd_xc_east_11_12_y_to_01_02_y_1_0',
+             [('pd_br_11_12_y', (0, 0, 0), 'CO'),
+              ('pd_br_01_02_y', (1, 0, 0), 'empty'),
+              ('pd_hol_E', (1, 0, 0), 'empty'),
+              ('pd_br_01_11_x', (1, 0, 0), 'empty'),
+              ('pd_br_02_12_x', (1, 0, 0), 'empty')],
+             [('pd_br_11_12_y', (0, 0, 0), 'empty'),
+              ('pd_br_01_02_y', (1, 0, 0), 'CO')]),
+            ('CO_diff_pd_xc_west_01_02_y_1_0_to_11_12_y',
+             [('pd_br_01_02_y', (1, 0, 0), 'CO'),
+              ('pd_br_11_12_y', (0, 0, 0), 'empty'),
+              ('pd_hol_E', (0, 0, 0), 'empty'),
+              ('pd_br_01_11_x', (0, 0, 0), 'empty'),
+              ('pd_br_02_12_x', (0, 0, 0), 'empty'),
+              ('pd_br_11_21_x', (0, 0, 0), 'empty')],
+             [('pd_br_01_02_y', (1, 0, 0), 'empty'),
+              ('pd_br_11_12_y', (0, 0, 0), 'CO')]),
+        ]
+        for _nm, _conds, _acts in _xlinks:
+            pt.add_process(
+                name=_nm,
+                conditions=[Condition(Coord(offset=o, layer=B.LAYER_NAME,
+                                            site=s), sp)
+                            for s, o, sp in _conds],
+                actions=[Action(Coord(offset=o, layer=B.LAYER_NAME,
+                                      site=s), sp)
+                         for s, o, sp in _acts],
+                rate_constant=_RATE_PD, tof_count=None)
     for p in COLLAPSED:
         down = site_kind(p['runtime']['src'][0]) == 'br'
         pt.add_process(

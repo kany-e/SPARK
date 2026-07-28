@@ -82,6 +82,8 @@ def main():
     ap.add_argument('--target-phi', type=float, required=True)
     ap.add_argument('--coad-fix', action='store_true',
                     help='Stage-2.9 deviation-#8 coadsorption-exclusion fix')
+    ap.add_argument('--interpatch-fix', action='store_true',
+                    help='Stage-3.0 deviation-#9 inter-patch CO transport fix')
     ap.add_argument('--seed', type=int, default=1)
     ap.add_argument('--tag', required=True)
     ap.add_argument('--ckpt-secs', type=float, default=300.0)
@@ -95,7 +97,8 @@ def main():
                             raise_oxide=args.raise_oxide,
                             raise_scope=args.raise_scope),
                        fig7_corrected=True,
-                       coadsorption_fix=args.coad_fix)
+                       coadsorption_fix=args.coad_fix,
+                       interpatch_fix=args.interpatch_fix)
     eng = KMCEngine(pt, size=[20, 20], print_rates=False, banner=False)
     eng.parameters.T = 393.0
     eng.parameters.p_COgas = 5e-11
@@ -118,6 +121,8 @@ def main():
             'checkpoint raise-scope mismatch'
         assert st.get('coad_fix', False) == args.coad_fix, \
             'checkpoint coad-fix mismatch'
+        assert st.get('ipp_fix', False) == args.interpatch_fix, \
+            'checkpoint interpatch-fix mismatch'
         eng.lattice[:] = st['lattice']
         eng.procstat[:] = st['procstat']
         eng.kmc_time = float(st['kmc_time'])
@@ -158,7 +163,8 @@ def main():
     def save(wall_total):
         state = dict(
             raise_oxide=args.raise_oxide, raise_scope=args.raise_scope,
-            coad_fix=args.coad_fix, seed=args.seed,
+            coad_fix=args.coad_fix, ipp_fix=args.interpatch_fix,
+            seed=args.seed,
             lattice=eng.lattice.copy(), procstat=eng.procstat.copy(),
             kmc_time=eng.kmc_time, kmc_step=eng.kmc_step,
             rng=np.random.get_state(), wall_used=wall_total,
@@ -218,7 +224,7 @@ def main():
     out = dict(
         tag=args.tag, raise_oxide=args.raise_oxide,
         raise_scope=args.raise_scope, coad_fix=args.coad_fix,
-        seed=args.seed,
+        ipp_fix=args.interpatch_fix, seed=args.seed,
         target_phi=args.target_phi, kmc_time=float(eng.kmc_time),
         steps=int(eng.kmc_step), wall_s=wall_total,
         phi_final=H.phi(eng), families=famtot,
