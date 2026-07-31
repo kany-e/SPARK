@@ -193,7 +193,8 @@ class _RogalCallback:
 
 
 def build_project(mode=None, fig7_corrected=False,
-                  coadsorption_fix=False, interpatch_fix=False):
+                  coadsorption_fix=False, interpatch_fix=False,
+                  caseII=None):
     """fig7_corrected=True applies the stage-2.3 footprint fix to the
     COLLAPSED model only (canonical XML untouched): the E
     cross-reaction's O condition/action moves from ox_hol_0@(0,-1)
@@ -313,6 +314,35 @@ def build_project(mode=None, fig7_corrected=False,
                                       site=s), sp)
                          for s, o, sp in _acts],
                 rate_constant=_RATE_PD, tof_count=None)
+    if caseII in ('A', 'B'):
+        # Stage 3.2 — BEYOND-TEXT hypothesis test (the paper adopts
+        # case I only, p1203). The case-II registry's cross channel,
+        # C2-derived in stage32_caseII/CASEII_GEOMETRY.md: the E-arrow
+        # of the antiparallel registry reaches the COMPLEMENTARY hollow
+        # class of the WEST neighbor (exact site-coordinate mapping:
+        # D' = pd_br_02_12_x, target' = ox_hol_1@(-1,0)). The channel
+        # is attached to the CO at the case-I D site (where our fixed-
+        # registry representation hosts the patch CO; conditioning on
+        # CO@02_12_x would smother it by the B-vs-D site-energy factor
+        # ~6e-5 as a representation artifact). Barrier: arm A = 0.95 eV
+        # (assumed equal to case I; the paper gives no case-II value);
+        # arm B = 0.95+0.15 = 1.10 eV (the registry energy difference
+        # as an effective penalty / population proxy).
+        _r = ('1/(beta*h)*exp(-(beta*E_cross_react_E*eV))' if caseII == 'A'
+              else '1/(beta*h)*exp(-(beta*(E_cross_react_E+0.15)*eV))')
+        pt.add_process(
+            name='cross_react_E_caseII_' + caseII,
+            conditions=[
+                Condition(Coord(offset=(0, 0, 0), layer=B.LAYER_NAME,
+                                site='pd_br_01_11_x'), 'CO'),
+                Condition(Coord(offset=(-1, 0, 0), layer=B.LAYER_NAME,
+                                site='ox_hol_1'), 'O')],
+            actions=[
+                Action(Coord(offset=(0, 0, 0), layer=B.LAYER_NAME,
+                             site='pd_br_01_11_x'), 'empty'),
+                Action(Coord(offset=(-1, 0, 0), layer=B.LAYER_NAME,
+                             site='ox_hol_1'), 'empty')],
+            rate_constant=_r, tof_count=None)
     for p in COLLAPSED:
         down = site_kind(p['runtime']['src'][0]) == 'br'
         pt.add_process(
