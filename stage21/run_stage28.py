@@ -87,6 +87,10 @@ def main():
     ap.add_argument('--caseII', default=None, choices=('A', 'B'),
                     help='Stage-3.2 BEYOND-TEXT case-II cross channel: '
                          'A=0.95 eV, B=1.10 eV; omit for none')
+    ap.add_argument('--flip-unfreeze', action='store_true',
+                    help='Stage-3.3 deviation-#13 fix (AUTHOR-HAND): '
+                         'accept externally-activated-but-empty self '
+                         'F-bridge in PHASE_FLIP')
     ap.add_argument('--seed', type=int, default=1)
     ap.add_argument('--tag', required=True)
     ap.add_argument('--ckpt-secs', type=float, default=300.0)
@@ -102,7 +106,8 @@ def main():
                        fig7_corrected=True,
                        coadsorption_fix=args.coad_fix,
                        interpatch_fix=args.interpatch_fix,
-                       caseII=args.caseII)
+                       caseII=args.caseII,
+                       flip_unfreeze=args.flip_unfreeze)
     eng = KMCEngine(pt, size=[20, 20], print_rates=False, banner=False)
     eng.parameters.T = 393.0
     eng.parameters.p_COgas = 5e-11
@@ -129,6 +134,8 @@ def main():
             'checkpoint interpatch-fix mismatch'
         assert st.get('caseII') == args.caseII, \
             'checkpoint caseII mismatch'
+        assert st.get('flip_unfreeze', False) == args.flip_unfreeze, \
+            'checkpoint flip-unfreeze mismatch'
         eng.lattice[:] = st['lattice']
         eng.procstat[:] = st['procstat']
         eng.kmc_time = float(st['kmc_time'])
@@ -170,7 +177,8 @@ def main():
         state = dict(
             raise_oxide=args.raise_oxide, raise_scope=args.raise_scope,
             coad_fix=args.coad_fix, ipp_fix=args.interpatch_fix,
-            caseII=args.caseII, seed=args.seed,
+            caseII=args.caseII, flip_unfreeze=args.flip_unfreeze,
+            seed=args.seed,
             lattice=eng.lattice.copy(), procstat=eng.procstat.copy(),
             kmc_time=eng.kmc_time, kmc_step=eng.kmc_step,
             rng=np.random.get_state(), wall_used=wall_total,
@@ -230,7 +238,8 @@ def main():
     out = dict(
         tag=args.tag, raise_oxide=args.raise_oxide,
         raise_scope=args.raise_scope, coad_fix=args.coad_fix,
-        ipp_fix=args.interpatch_fix, caseII=args.caseII, seed=args.seed,
+        ipp_fix=args.interpatch_fix, caseII=args.caseII,
+        flip_unfreeze=args.flip_unfreeze, seed=args.seed,
         target_phi=args.target_phi, kmc_time=float(eng.kmc_time),
         steps=int(eng.kmc_step), wall_s=wall_total,
         phi_final=H.phi(eng), families=famtot,

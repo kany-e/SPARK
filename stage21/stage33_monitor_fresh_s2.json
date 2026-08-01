@@ -1,0 +1,36 @@
+{
+ "tag": "fresh_s2",
+ "ckpt": null,
+ "seed": 2,
+ "caseII": null,
+ "kmc_start": 0.0,
+ "kmc_end": 18.14888975619181,
+ "kmc_span": 18.14888975619181,
+ "steps_run": 280000,
+ "wall": 1916.9450721740723,
+ "counts": {
+  "formations": 2,
+  "would_fire_canonical": 2,
+  "blk_self_F_activated": 0,
+  "blk_self_other_nonnull": 0,
+  "blk_co_oxbr": 0,
+  "blk_o_oxbr": 0,
+  "blk_co_FH": 0,
+  "blk_o_FH": 0,
+  "authorhand_flippable_blocked_canonical": 0,
+  "cross_pair_covac": 312
+ },
+ "rates_per_kmc": {
+  "formations": 0.11019957842422097,
+  "would_fire_canonical": 0.11019957842422097,
+  "blk_self_F_activated": 0.0,
+  "blk_self_other_nonnull": 0.0,
+  "blk_co_oxbr": 0.0,
+  "blk_o_oxbr": 0.0,
+  "blk_co_FH": 0.0,
+  "blk_o_FH": 0.0,
+  "authorhand_flippable_blocked_canonical": 0.0,
+  "cross_pair_covac": 17.19113423417847
+ },
+ "blocked_events": []
+}

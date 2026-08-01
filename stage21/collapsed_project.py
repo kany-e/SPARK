@@ -194,7 +194,7 @@ class _RogalCallback:
 
 def build_project(mode=None, fig7_corrected=False,
                   coadsorption_fix=False, interpatch_fix=False,
-                  caseII=None):
+                  caseII=None, flip_unfreeze=False):
     """fig7_corrected=True applies the stage-2.3 footprint fix to the
     COLLAPSED model only (canonical XML untouched): the E
     cross-reaction's O condition/action moves from ox_hol_0@(0,-1)
@@ -356,6 +356,48 @@ def build_project(mode=None, fig7_corrected=False,
                      for s, o, sp in p['acts']],
             rate_constant=_EXPR_DOWN if down else _EXPR_UP,
             tof_count=p['tof'])
+    if flip_unfreeze:
+        # Stage 3.3 — deviation #13 fix (AUTHOR-HAND-DERIVED,
+        # BEYOND-PAPER-TEXT conviction; stage33_authorhand/). Canonical's
+        # PHASE_FLIP conditions its OWN pd_br_02_12_x = null, but every
+        # flip writes pd_br_02_12_x@(-1,0) -> empty into its WEST
+        # neighbor; a cell whose EAST neighbor flips first therefore
+        # fails its self-null condition FOREVER (nothing writes null).
+        # Measured: the seeded stripe's west wrap column is 100% frozen
+        # from t=0 in every run, plus 9-15 east-enveloped cells per
+        # horizon; in the stall regime 284/288 divacancy formations are
+        # blocked SOLELY by this (CO/O blockers: 0). The paper's Fig 9
+        # completes to ~0 at three cell widths (impossible under the
+        # freeze: hard >=5% floor at 20 wide), and Hoffmann's own
+        # destruct family conditions ONLY the four oxide-footprint
+        # sites. Minimal fix: accept the externally-activated-but-EMPTY
+        # self F-bridge (CO/O-occupied still blocks; measured never
+        # occupied at formation instants). Clones the 4 flip variants
+        # with the one condition changed; off -> bit-identical model.
+        _flips = [p for p in pt.process_list
+                  if p.name.startswith('PHASE_FLIP_oxide_to_metal')]
+        for fp in _flips:
+            conds = []
+            for c in fp.conditions:
+                if (c.coord.site == 'pd_br_02_12_x'
+                        and tuple(c.coord.offset)[:2] == (0, 0)):
+                    conds.append(Condition(
+                        Coord(offset=tuple(c.coord.offset),
+                              layer=B.LAYER_NAME,
+                              site='pd_br_02_12_x'), 'empty'))
+                else:
+                    conds.append(Condition(
+                        Coord(offset=tuple(c.coord.offset),
+                              layer=B.LAYER_NAME, site=c.coord.site),
+                        c.species))
+            acts = [Action(Coord(offset=tuple(a.coord.offset),
+                                 layer=B.LAYER_NAME, site=a.coord.site),
+                           a.species)
+                    for a in fp.actions]
+            pt.add_process(name=fp.name + '_selfFempty_unfreeze',
+                           conditions=conds, actions=acts,
+                           rate_constant=fp.rate_constant,
+                           tof_count=fp.tof_count)
     if mode is not None:
         cb = _RogalCallback(**mode)
         pt.rate_callbacks = {n: cb for n in RUNTIME}

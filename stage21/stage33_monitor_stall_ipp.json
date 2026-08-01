@@ -1,0 +1,36 @@
+{
+ "tag": "stall_ipp",
+ "ckpt": "stage28_ipp_s1.ckpt",
+ "seed": 2,
+ "caseII": null,
+ "kmc_start": 277.04954992035664,
+ "kmc_end": 282.9766963428983,
+ "kmc_span": 5.927146422541682,
+ "steps_run": 6826000,
+ "wall": 2470.0296754837036,
+ "counts": {
+  "formations": 370,
+  "unblocked": 370,
+  "co_oxbr": 0,
+  "co_F": 0,
+  "co_H": 0,
+  "o_oxbr": 0,
+  "o_F": 0,
+  "o_H": 0,
+  "other_block": 0,
+  "cross_pair_covac": 628
+ },
+ "rates_per_kmc": {
+  "formations": 62.42464309517368,
+  "unblocked": 62.42464309517368,
+  "co_oxbr": 0.0,
+  "co_F": 0.0,
+  "co_H": 0.0,
+  "o_oxbr": 0.0,
+  "o_F": 0.0,
+  "o_H": 0.0,
+  "other_block": 0.0,
+  "cross_pair_covac": 105.95317801018668
+ },
+ "blocked_events": []
+}
