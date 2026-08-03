@@ -91,6 +91,8 @@ def main():
                     help='Stage-3.3 deviation-#13 fix (AUTHOR-HAND): '
                          'accept externally-activated-but-empty self '
                          'F-bridge in PHASE_FLIP')
+    ap.add_argument('--T', type=float, default=393.0,
+                    help='temperature in K (stage-3.4 leg: 343.0)')
     ap.add_argument('--seed', type=int, default=1)
     ap.add_argument('--tag', required=True)
     ap.add_argument('--ckpt-secs', type=float, default=300.0)
@@ -109,7 +111,7 @@ def main():
                        caseII=args.caseII,
                        flip_unfreeze=args.flip_unfreeze)
     eng = KMCEngine(pt, size=[20, 20], print_rates=False, banner=False)
-    eng.parameters.T = 393.0
+    eng.parameters.T = args.T
     eng.parameters.p_COgas = 5e-11
     eng.parameters.p_O2gas = 1e-30
     null_id = eng.species_id['null']
@@ -136,6 +138,7 @@ def main():
             'checkpoint caseII mismatch'
         assert st.get('flip_unfreeze', False) == args.flip_unfreeze, \
             'checkpoint flip-unfreeze mismatch'
+        assert st.get('T', 393.0) == args.T, 'checkpoint T mismatch'
         eng.lattice[:] = st['lattice']
         eng.procstat[:] = st['procstat']
         eng.kmc_time = float(st['kmc_time'])
@@ -178,7 +181,7 @@ def main():
             raise_oxide=args.raise_oxide, raise_scope=args.raise_scope,
             coad_fix=args.coad_fix, ipp_fix=args.interpatch_fix,
             caseII=args.caseII, flip_unfreeze=args.flip_unfreeze,
-            seed=args.seed,
+            T=args.T, seed=args.seed,
             lattice=eng.lattice.copy(), procstat=eng.procstat.copy(),
             kmc_time=eng.kmc_time, kmc_step=eng.kmc_step,
             rng=np.random.get_state(), wall_used=wall_total,
@@ -239,7 +242,7 @@ def main():
         tag=args.tag, raise_oxide=args.raise_oxide,
         raise_scope=args.raise_scope, coad_fix=args.coad_fix,
         ipp_fix=args.interpatch_fix, caseII=args.caseII,
-        flip_unfreeze=args.flip_unfreeze, seed=args.seed,
+        flip_unfreeze=args.flip_unfreeze, T=args.T, seed=args.seed,
         target_phi=args.target_phi, kmc_time=float(eng.kmc_time),
         steps=int(eng.kmc_step), wall_s=wall_total,
         phi_final=H.phi(eng), families=famtot,
