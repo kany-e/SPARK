@@ -1,0 +1,36 @@
+{
+ "tag": "t343_blocks",
+ "ckpt": "stage28_t343_s1.ckpt",
+ "seed": 2,
+ "caseII": null,
+ "kmc_start": 21951.50895677254,
+ "kmc_end": 23249.649832408202,
+ "kmc_span": 1298.1408756356614,
+ "steps_run": 6798000,
+ "wall": 2157.512341737747,
+ "counts": {
+  "formations": 0,
+  "would_fire_canonical": 0,
+  "blk_self_F_activated": 0,
+  "blk_self_other_nonnull": 0,
+  "blk_co_oxbr": 0,
+  "blk_o_oxbr": 0,
+  "blk_co_FH": 0,
+  "blk_o_FH": 0,
+  "authorhand_flippable_blocked_canonical": 0,
+  "cross_pair_covac": 0
+ },
+ "rates_per_kmc": {
+  "formations": 0.0,
+  "would_fire_canonical": 0.0,
+  "blk_self_F_activated": 0.0,
+  "blk_self_other_nonnull": 0.0,
+  "blk_co_oxbr": 0.0,
+  "blk_o_oxbr": 0.0,
+  "blk_co_FH": 0.0,
+  "blk_o_FH": 0.0,
+  "authorhand_flippable_blocked_canonical": 0.0,
+  "cross_pair_covac": 0.0
+ },
+ "blocked_events": []
+}
