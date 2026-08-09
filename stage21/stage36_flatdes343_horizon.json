@@ -1,0 +1,22 @@
+{
+ "tag": "flatdes343_s1_horizon",
+ "kmc": 1934.2035356801512,
+ "phi": 0.615,
+ "flips": 134,
+ "families": {
+  "LH_ox": 843,
+  "cross_react": 167,
+  "CO_ads_ox": 12337,
+  "CO_des_ox": 10846,
+  "O_oxide_to_patch": 18199,
+  "PHASE_FLIP": 134,
+  "O_diff_ox": 0
+ },
+ "per_visit_LH": 0.06833103671881333,
+ "last_vacater": {
+  "O_oxide_to_patch": 82,
+  "LH_ox": 51,
+  "cross_react": 1
+ },
+ "note": "killed after registered kmc-2000 deadline; T_50(343) > 2000 measured; ckpt kmc 1934 preserved"
+}
