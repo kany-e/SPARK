@@ -194,7 +194,8 @@ class _RogalCallback:
 
 def build_project(mode=None, fig7_corrected=False,
                   coadsorption_fix=False, interpatch_fix=False,
-                  caseII=None, flip_unfreeze=False):
+                  caseII=None, flip_unfreeze=False,
+                  desorption_flat=False):
     """fig7_corrected=True applies the stage-2.3 footprint fix to the
     COLLAPSED model only (canonical XML untouched): the E
     cross-reaction's O condition/action moves from ox_hol_0@(0,-1)
@@ -398,8 +399,35 @@ def build_project(mode=None, fig7_corrected=False,
                            conditions=conds, actions=acts,
                            rate_constant=fp.rate_constant,
                            tof_count=fp.tof_count)
+    if desorption_flat:
+        # Stage 3.6 — AUTHOR-HAND/BEYOND-TEXT reconstruction
+        # (stage36_flatdes/): flat effective oxide CO desorption, one
+        # rate per site type, replacing the configuration-resolved
+        # runtime evaluation FOR DESORPTION ONLY. Paper leg: p1202
+        # calls -0.92 eV "the relevant CO adsorption energy" and the
+        # sensitivity analysis varies "the CO adsorption energy on the
+        # bridge and hollow sites" as flat knobs; author-hand leg: the
+        # sqrt5 parent's 6 CO_desorption processes carry one condition
+        # each with fixed per-site-type energies (E_CO_strong/weak) —
+        # no configuration variants. Bridge E_eff = 0.92 (the paper's
+        # number); hollow preserves the bare site-type offset
+        # E0_hol - E0_br = 0.52 -> 1.44 (hollow-CO is a minority
+        # population; choice stated in the registration). TST-barrier
+        # convention (the family's existing form), not the fixture's
+        # detailed-balance-with-mu form (recorded, not implemented).
+        _FLAT = {'CO_des_ox_ox_br_0': 0.92, 'CO_des_ox_ox_br_1': 0.92,
+                 'CO_des_ox_ox_hol_0': 1.44, 'CO_des_ox_ox_hol_1': 1.44}
+        for p in pt.process_list:
+            if p.name in _FLAT:
+                p.rate_constant = ('1/((1/(kboltzmann*T))*h)*exp(-(1/'
+                                   '(kboltzmann*T))*%.2f*eV)'
+                                   % _FLAT[p.name])
     if mode is not None:
         cb = _RogalCallback(**mode)
-        pt.rate_callbacks = {n: cb for n in RUNTIME}
+        names = RUNTIME
+        if desorption_flat:
+            names = {n: v for n, v in RUNTIME.items()
+                     if not n.startswith('CO_des_ox')}
+        pt.rate_callbacks = {n: cb for n in names}
         pt._rogal_cb = cb
     return pt
