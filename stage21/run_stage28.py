@@ -96,6 +96,9 @@ def main():
     ap.add_argument('--desorption-flat', action='store_true',
                     help='Stage-3.6 AUTHOR-HAND flat oxide CO '
                          'desorption (0.92 br / 1.44 hol)')
+    ap.add_argument('--reloc-shift', type=float, default=0.0,
+                    help='Stage-3.7 thesis-licensed relocation-pair '
+                         'barrier shift (both directions, split kept)')
     ap.add_argument('--seed', type=int, default=1)
     ap.add_argument('--tag', required=True)
     ap.add_argument('--ckpt-secs', type=float, default=300.0)
@@ -113,7 +116,8 @@ def main():
                        interpatch_fix=args.interpatch_fix,
                        caseII=args.caseII,
                        flip_unfreeze=args.flip_unfreeze,
-                       desorption_flat=args.desorption_flat)
+                       desorption_flat=args.desorption_flat,
+                       reloc_shift=args.reloc_shift)
     eng = KMCEngine(pt, size=[20, 20], print_rates=False, banner=False)
     eng.parameters.T = args.T
     eng.parameters.p_COgas = 5e-11
@@ -145,6 +149,8 @@ def main():
         assert st.get('T', 393.0) == args.T, 'checkpoint T mismatch'
         assert st.get('desorption_flat', False) == args.desorption_flat, \
             'checkpoint desorption-flat mismatch'
+        assert st.get('reloc_shift', 0.0) == args.reloc_shift, \
+            'checkpoint reloc-shift mismatch'
         eng.lattice[:] = st['lattice']
         eng.procstat[:] = st['procstat']
         eng.kmc_time = float(st['kmc_time'])
@@ -188,7 +194,7 @@ def main():
             coad_fix=args.coad_fix, ipp_fix=args.interpatch_fix,
             caseII=args.caseII, flip_unfreeze=args.flip_unfreeze,
             T=args.T, desorption_flat=args.desorption_flat,
-            seed=args.seed,
+            reloc_shift=args.reloc_shift, seed=args.seed,
             lattice=eng.lattice.copy(), procstat=eng.procstat.copy(),
             kmc_time=eng.kmc_time, kmc_step=eng.kmc_step,
             rng=np.random.get_state(), wall_used=wall_total,
@@ -250,7 +256,8 @@ def main():
         raise_scope=args.raise_scope, coad_fix=args.coad_fix,
         ipp_fix=args.interpatch_fix, caseII=args.caseII,
         flip_unfreeze=args.flip_unfreeze, T=args.T,
-        desorption_flat=args.desorption_flat, seed=args.seed,
+        desorption_flat=args.desorption_flat,
+        reloc_shift=args.reloc_shift, seed=args.seed,
         target_phi=args.target_phi, kmc_time=float(eng.kmc_time),
         steps=int(eng.kmc_step), wall_s=wall_total,
         phi_final=H.phi(eng), families=famtot,

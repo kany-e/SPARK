@@ -195,7 +195,7 @@ class _RogalCallback:
 def build_project(mode=None, fig7_corrected=False,
                   coadsorption_fix=False, interpatch_fix=False,
                   caseII=None, flip_unfreeze=False,
-                  desorption_flat=False):
+                  desorption_flat=False, reloc_shift=0.0):
     """fig7_corrected=True applies the stage-2.3 footprint fix to the
     COLLAPSED model only (canonical XML untouched): the E
     cross-reaction's O condition/action moves from ox_hol_0@(0,-1)
@@ -422,6 +422,24 @@ def build_project(mode=None, fig7_corrected=False,
                 p.rate_constant = ('1/((1/(kboltzmann*T))*h)*exp(-(1/'
                                    '(kboltzmann*T))*%.2f*eV)'
                                    % _FLAT[p.name])
+    if reloc_shift:
+        # Stage 3.7 — thesis-licensed relocation-range arm: the O
+        # patch<->oxide relocation pair (paper Table 2: 0.5/0.9) was,
+        # per the dissertation, a tentative swept range under the
+        # thermodynamic-reversibility constraint (0.4 eV split), never
+        # DFT-computed, and kinetically insignificant in the production
+        # model. This shifts BOTH barriers by reloc_shift, preserving
+        # the split. One change; spillover, laterals, gates, flip all
+        # untouched. reloc_shift=0.0 -> bit-identical (regression gate).
+        for p in pt.process_list:
+            if p.name.startswith('O_oxide_to_patch'):
+                p.rate_constant = p.rate_constant.replace(
+                    'E_O_oxide_br_to_patch*eV',
+                    '(E_O_oxide_br_to_patch+%.2f)*eV' % reloc_shift)
+            elif p.name.startswith('O_patch_to_oxide'):
+                p.rate_constant = p.rate_constant.replace(
+                    'E_O_patch_to_oxide_br*eV',
+                    '(E_O_patch_to_oxide_br+%.2f)*eV' % reloc_shift)
     if mode is not None:
         cb = _RogalCallback(**mode)
         names = RUNTIME
