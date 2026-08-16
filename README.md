@@ -2,17 +2,21 @@
 
 A unified Python + Rust toolkit for **kinetic Monte Carlo (KMC)** and **mean-field microkinetic modeling (MKM)** of electrochemical and heterogeneous catalysis.
 
-> **This branch (`runtime-laterals`) is the single branch of record for
-> the HR2015 reproduction arc** (Hoffmann–Scheffler–Reuter, ACS Catal.
+> **`kany-e/SPARK` is a fork of
+> [`WanluLigroupUCSD/SPARK`](https://github.com/WanluLigroupUCSD/SPARK);
+> `main` tracks upstream and carries no arc changes. This branch
+> (`runtime-laterals`) is the fork's single branch of record for the
+> HR2015 reproduction arc** (Hoffmann–Scheffler–Reuter, ACS Catal.
 > 2015: CO-driven Pd(100)/PdO(√5×√5)R27° surface-oxide reduction,
-> multi-lattice KMC). All SPARK edits for the arc live only in this
-> repo: the engine work in `spark/engine.py` (anchor-multiplicity fix,
-> runtime-lateral rate path), the canonical model copy in
-> `stage16/vendor/`, and the collapsed model, runners, gates, and
-> committed run evidence (`*.json.gz`) in `stage21/`. The research
-> record — registrations, adjudications, journal, primary sources —
-> lives in [`kany-e/reconkin`](https://github.com/kany-e/reconkin),
-> branch `stage21-runtime-laterals` (see its
+> multi-lattice KMC). All SPARK edits for the arc live only on this
+> branch of the fork: the engine work in `spark/engine.py`
+> (anchor-multiplicity fix, runtime-lateral rate path), the canonical
+> model copy in `stage16/vendor/`, and the collapsed model, runners,
+> gates, and committed run evidence (`*.json.gz`) in `stage21/`. The
+> research record — registrations, adjudications, journal, primary
+> sources — lives in
+> [`kany-e/reconkin`](https://github.com/kany-e/reconkin), branch
+> `stage21-runtime-laterals` (see its
 > `HR2015_REPRODUCTION_HISTORY.md`).
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
